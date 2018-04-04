@@ -26,7 +26,7 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
-      
+     
       <?php if(isset($_SESSION["nombre"])) { ?>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $root?>mi-cuenta/">Hola <?php echo $_SESSION["nombre"]["nombre"]?></a>
