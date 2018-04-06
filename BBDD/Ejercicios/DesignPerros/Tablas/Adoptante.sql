@@ -1,9 +1,0 @@
-CREATE TABLE Adoptante (
-	id INT IDENTITY (1,1) NOT NULL
-	, NIF_NIE VARCHAR (15) NOT NULL  
-	, Nombre VARCHAR (50) NOT NULL
-	, CorreoElectronico VARCHAR (40) NOT NULL
-	, CONSTRAINT PK_Adoptante_AdoptanteID PRIMARY KEY CLUSTERED (id)
-);
-
-

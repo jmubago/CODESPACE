@@ -1,0 +1,6 @@
+
+CREATE TABLE fuente_ID (
+	id INT IDENTITY (1,1) NOT NULL
+	, nombre VARCHAR (20) NOT NULL
+	, CONSTRAINT PK_fuente_fuenteID PRIMARY KEY CLUSTERED (id)
+);

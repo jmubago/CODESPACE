@@ -35,26 +35,15 @@
               <a class="nav-link" href="<?php echo $root?>loginUsuario/close.php">Cerrar sesión</a>
             </li>
       <?php }else{ ?>
-      <div class="btn-group">
-        <button type="button" class="btn btn-outline-primary dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Log in
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="<?php echo $root?>loginUsuario">Usuario</a>
-            <a class="dropdown-item" href="<?php echo $root?>loginCoach">Coach</a>
-            <a class="dropdown-item" href="<?php echo $root?>loginEmpresas">Empresa</a>
-        </div>
-       </div>   
-       <div class="btn-group">
-        <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Regístro
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="<?php echo $root?>registroUsuario/index.php">Usuario</a>
-            <a class="dropdown-item" href="<?php echo $root?>registroCoach/index.php">Coach</a>
-            <a class="dropdown-item" href="<?php echo $root?>registroEmpresas/index.php">Empresa</a>
-        </div> 
-       </div>
+            
+            
+      <div class="btn-group mx-3">
+        <a href="<?php echo $root?>login/index.php" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Login</a>
+      </div>  
+            
+      <div class="btn-group mx-3">
+        <a href="<?php echo $root?>registro/index.php" class="btn btn-outline-info btn-rounded waves-effect" role="button">Registro</a>
+      </div>    
       <?php } ?>
     </ul>
       

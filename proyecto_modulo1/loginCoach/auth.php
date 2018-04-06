@@ -27,11 +27,6 @@ while( $row = sqlsrv_fetch_array( $resultado, SQLSRV_FETCH_ASSOC))
 }  }
 */
 
-
-
-
-
- 
  if($resultado){
     $usuario = sqlsrv_fetch_array( $resultado, SQLSRV_FETCH_ASSOC);
     if ($usuario){
@@ -48,10 +43,8 @@ while( $row = sqlsrv_fetch_array( $resultado, SQLSRV_FETCH_ASSOC))
         $template_seccion = "../templates/login_coach.php";
 
 }
-   
-
-  
-
 include '../templates/main.php';
-
 ?>
+
+
+

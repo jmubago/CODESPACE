@@ -4,11 +4,11 @@
         <?php echo $error ?></p>
     </div> 
     <?php } ?>
-    <?php if(isset($mensaje_usuario)){?>
-    <div class="alert alert-success" role="alert">
-        <?php echo $mensaje_usuario?></p>
-    </div> 
-    <?php } ?>
+    <div class="row">
+        <div class="col mt-1 text-center">
+            <h5>Te estás logeando como Usuario</h5>
+        </div>    
+    </div>
     <form method="POST" action="<?php echo $root?>loginUsuario/auth.php" id="login">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>

@@ -1,0 +1,12 @@
+
+CREATE TABLE citas_ID (
+	id INT IDENTITY (1,1) NOT NULL
+	, dia DATE NOT NULL
+	, hora_inicio SMALLDATETIME NOT NULL
+	, hora_fin SMALLDATETIME NOT NULL
+	, lugar VARCHAR (50) NOT NULL
+	, clienteID INT NOT NULL
+	, apartamentoID  INT NOT NULL
+	, estatus BIT NOT NULL
+	, CONSTRAINT PK_citas_citasID PRIMARY KEY CLUSTERED (id)
+);

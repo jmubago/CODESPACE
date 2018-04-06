@@ -47,7 +47,7 @@
             <h5>Realizamos un análisis completo de tu empresa en la plataforma de Glassdor y lo comparamos con tu competencia.</h5>
             <br>
             <h5>Te ofrecemos las mejores soluciones para que puedas mejorar de manera orgánica y mantenida en el tiempo tus resultados</h5>
-            <a class="btn btn-primary mt-4" href="#" role="button">Regístrate</a>
+            <a class="btn btn-primary mt-4" href="<?php echo $root?>registro/index.php" role="button">Regístrate</a>
         </div>
     </div>
 </div>
@@ -63,7 +63,7 @@
             <h5>La mejor manera de cuidar a tus empleados, es preocuparte por ellos incluso cuando dejan de trabajar para ti.</h5>
             <br>
             <h5>Los servicios de Outplacement son la solución perfecta para la transición que supone el dejar de tener un empleo.</h5>
-            <a class="btn btn-primary mt-4" href="#" role="button">Regístrate</a>
+            <a class="btn btn-primary mt-4" href="<?php echo $root?>login/index.php" role="button">Login</a>
         </div>
         <div class="col-3 mt-3 offset-1" style="text-align: center">
             <img src="../media/outplacement.jpg" class="img-fluid" alt="Responsive image">

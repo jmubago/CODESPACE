@@ -1,84 +1,58 @@
+<?php 
+if(empty($_GET)){
+}else{
+$variable = $_GET["tipo"];}
+?>
 <div class="container">
-    <?php if(isset($error)){?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo $error ?></p>
-    </div> 
-    <?php } ?>
-  
-  <form method="POST" class="form-horizontal" action="<?php echo $root?>login/registro.php" id="registro">
-      
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Nombre:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Introduce tu nombre">
+   <div class="row">
+        <div class="col mt-1 text-center">
+            <h5>Registro</h5>
+        </div>
+ </div>  
+<div class="container my-2">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+            <img class="img-fluid" src="../media/registro-usuario.jpg" alt="Card image cap">  
+          <div class="card-body">
+            <h5 class="card-title">Para los usuarios</h5>
+            <p class="card-text">Si estás disfrutando de nuestros servicios de Outplacement por parte de nuestros Coach, este es tu panel.</p>
+                <a href="?tipo=usuario" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Usuario</a>
           </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Apellido:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Introduce tu apellido">
-          </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Introduce tu email">
-          </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
-          <div class="col-sm-10"> 
-            <input type="password" class="form-control" name="contraseña" id="pwd" placeholder="Introduce tu contraseña">
-          </div>
-    </div>
-    <div class="form-group"> 
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox"> Recuérdame</label>
         </div>
       </div>
+      <div class="col-sm-4">
+        <div class="card">
+            <img class="img-fluid" src="../media/registro-coach.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Para los coach</h5>
+            <p class="card-text">Si ya formas parte de nuestro pedazo de grupo de Coachs tienes accede aquí a tu panel.</p>
+                <a href="?tipo=coach" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Coach</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+            <img class="img-fluid" src="../media/registro-empresa.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Para las empresas</h5>
+            <p class="card-text">Si eres una de las afortunadas empresas que confía en nuestros servicios, puedes acceder aquí a tu panel.</p>
+            <a href="?tipo=empresas" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Empresa</a>
+          </div>
+        </div>
+      </div>  
     </div>
-    <div class="row">  
-        <div class="col-xs-6 col-sm-6 col-md-6">
-        <div class="form-group"> 
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-            
-        <div class="col-xs-6 col-sm-6 col-md-6">
-            <div class="nav-item"> 
-                
-                <strong>Si ya estás registrado:</strong>
-            <a href="<?php echo $root?>login/index.php" class="btn btn-xs btn-info mb-2"><span class="glyphicon glyphicon-ok"></span>Login</a>
-          </div>
-        </div>
-        </div>
-    </div>  
-</form>
 </div>
-<script>
-    $(document).ready(function(){
-        $("#registro").validate({
-            rules: {
-                nombre: {
-                    required: true,
-                    minlength: 2
-                    },
-                apellido: {
-                    required: true,
-                    minlength: 2
-                    },
-                email: "required",
-                contraseña: "required"
-             },
-            messages: {
-                nombre: "Debes introducir tu nombre",
-                apellido: "Debes introducir tu apellido",
-                email: "Debes introducir un email válido",
-                contraseña: "Debes introducir una contraseña válida"
-            }
-        })
-    })
-</script>
+  
+<div class="container my-5"> 
+ <?php if(isset($mensaje)){?>
+    <div class="alert alert-success" role="alert">
+        <?php echo $mensaje?></p>
+    </div> 
+    <?php } ?>   
+    
+    
+ <?php if (isset($_GET["tipo"])) {
+    include ('registro_' . $variable . '.php');
+} ?>  
+</div>    

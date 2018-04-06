@@ -1,3 +1,8 @@
+.col-centered{
+float: none;
+margin: 0 auto;
+}
+
 .thumbnail {
     position: relative;
 }
@@ -17,10 +22,10 @@
     opacity: 0.5;
 }
 
-.botton-login{
-    color: #fff;
+.botton-eliminar{
+    color: red;
     font-size: 1.4em;
-   
+    float: right;
 }
 
 .mi-imagen-responsive {

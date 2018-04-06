@@ -1,3 +1,8 @@
+<div class="row">
+        <div class="col mt-1 text-center">
+            <h5>Te estás registrando como Coach</h5>
+        </div>    
+    </div>
 <div class="container my-5">    
     <form id="registro" method="post" action="<?php echo $root?>registroCoach/registro_OK.php">
       <div class="form-group row">
@@ -31,13 +36,13 @@
         </div>
       </div>
        <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">Teléfono</label>
+        <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
         </div>
       </div> 
       <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">IBAN</label>
+        <label for="iban" class="col-sm-2 col-form-label">IBAN</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="iban" name="iban" placeholder="IBAN">
         </div>

@@ -1,9 +1,0 @@
-
-CREATE TABLE reservas_ID (
-	id INT IDENTITY (1,1) NOT NULL
-	, clienteID VARCHAR(50) NOT NULL
-	, apartamentoID  TINYINT NOT NULL
-	, fuenteID TINYINT NOT NULL
-	, CONSTRAINT PK_reservas_reservasID PRIMARY KEY CLUSTERED (id)
-);
-

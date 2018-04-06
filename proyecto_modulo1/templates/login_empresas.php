@@ -4,11 +4,11 @@
         <?php echo $error ?></p>
     </div> 
     <?php } ?>
-    <?php if(isset($mensaje_empresas)){?>
-    <div class="alert alert-success" role="alert">
-        <?php echo $mensaje_empresas ?></p>
-    </div> 
-    <?php } ?>
+    <div class="row">
+        <div class="col mt-1 text-center">
+            <h5>Te estás logeando como Empresa</h5>
+        </div>    
+    </div>
     <form method="POST" action="<?php echo $root?>loginEmpresas/auth.php" id="login">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>

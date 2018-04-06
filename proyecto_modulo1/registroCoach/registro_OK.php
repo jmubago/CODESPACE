@@ -1,4 +1,4 @@
-El registro se ha completado
+
 
 <?php
 

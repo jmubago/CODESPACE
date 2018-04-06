@@ -3,10 +3,10 @@
 session_start();
 require '../startApp.php';
 $titulo = "Home";
-$mensaje_empresas = "Se ha cerrado tu sesión de Empresa correctamente";
+$mensaje = "Se ha cerrado tu sesión de Empresa correctamente";
 session_unset();
 session_destroy();
-$template_seccion = "../templates/login_empresas.php";
+$template_seccion = "../templates/login.php";
 
 
 include ("../templates/main.php");
