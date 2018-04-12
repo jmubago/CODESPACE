@@ -1,0 +1,26 @@
+Razon social:
+Prueba clase
+
+CIF:
+A328225S
+
+Direccion:
+Calle Larios, 3, Malaga
+
+email:
+pruebaclase@info.com
+
+contraseña:
+123456
+
+Telefono:
++34952369147
+
+Persona contacto:
+Prueba contacto
+
+Código unico:
+32765
+
+IBAN:
+ES32210004184012332234

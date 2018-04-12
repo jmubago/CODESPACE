@@ -1,0 +1,17 @@
+Nombre:
+Marie
+
+Apellido:
+Curie
+
+email:
+mariecuria@gmail.com
+
+contraseña:
+123456
+
+telefono:
++34239784367
+
+sobre ti:
+Hola soy Marie Lorem ipsum dolor sit amet, consectetur adipiscing elit.

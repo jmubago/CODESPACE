@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+1.- TODO LIST: Añadir un TODO  a la lista, ver la lista y eliminar un todolist
+2.- Está prohibido usar PHP para renderizar datos.
+3.- PHP solo va a renderizar HTML con CSS y JS.
+4. Para obtener el listado, llamaremos por AJAX a listar.php ( con GET)
+5. Para añadir un item al listado, llamaremos por AJAX a add.php (con un POST)
+6. Para eliminar un item
+https://codepen.io/anon/pen/zWejPg
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+  	<title>To-Do List</title>
+    <link rel="stylesheet" href="todolist.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="todolist.js"></script>
+    <script>
+      $(document).ready(function(){
+         $.ajax({
+              url: "list.php",
+              type: "GET",
+              success: function(res){
+                  console.log(res);
+                  for(i=0;i<res.length;i++){
+                    $("#listUl").append('<li id="' + res[i].id + '" data-tarea-id="' + res[i].id + '" class="tarea">' + res[i].tarea + '</li>');
+                    
+                  }  
+                  
+                }
+            })
+              
+        
+        $(".button").click(function(){ 
+        $.ajax({
+            url: "add.php",
+            type: "POST",
+            data: {nombre: $("#listItem").val()},
+            success: function(data){
+            $("#listUl").append('<li id="' + data.id + '" data-tarea-id="' + data.id + '" class="tarea">' + data.tarea + '</li>');
+            $('#listItem').val("");
+            } 
+            })
+        })
+        $("#listUl").on("click", ".tarea", function(event){
+            $.ajax({
+                url: "delete.php",
+                type: "POST",
+                data: {id: event.target.id},
+                success: $(event.target).remove()
+            })
+        })
+          
+      });
+    </script>
+	</head>
+	<body>    
+    <div class="container">
+  		<h2>To Do</h2>
+  		<form name="listForm" class="listFormClass">
+  			<input id="listItem" type="text" name="listItem" placeholder="Add new">
+        <button type="button" class="button">+</button>
+        
+      </form>
+  		<br><br>
+      <!-- Class 'sortable' enables sorting with jQuery UI method sortable() -->
+  		<ul id="listUl" class="sortable">
+          
+      </ul>
+    </div>
+	</body>
+</html>
