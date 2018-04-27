@@ -11,17 +11,7 @@ $variable = $_GET["tipo"];}
  </div>  
 <div class="container my-2">
     <div class="row">
-      <div class="col-sm-4">
-        <div class="card">
-            <img class="img-fluid" src="../media/registro-usuario.jpg" alt="Card image cap">  
-          <div class="card-body">
-            <h5 class="card-title">Para los usuarios</h5>
-            <p class="card-text">Si estás disfrutando de nuestros servicios de Outplacement por parte de nuestros Coach, este es tu panel.</p>
-                <a href="?tipo=usuario_validacion" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Usuario</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <div class="card">
             <img class="img-fluid" src="../media/registro-coach.jpg" alt="Card image cap">
           <div class="card-body">
@@ -31,7 +21,7 @@ $variable = $_GET["tipo"];}
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <div class="card">
             <img class="img-fluid" src="../media/registro-empresa.jpg" alt="Card image cap">
           <div class="card-body">

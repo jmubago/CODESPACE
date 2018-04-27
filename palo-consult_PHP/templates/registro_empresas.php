@@ -89,12 +89,6 @@
         <div class="col-sm-10">
           <input type="text" class="form-control" id="personaContacto" name="personaContacto" placeholder="Persona Contacto">
         </div>
-      </div> 
-      <div class="form-group row">
-        <label for="codigoUnico" class="col-sm-2 col-form-label">Código Único</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="personaContacto" name="codigoUnico" placeholder="Código único">
-        </div>
       </div>  
       <div class="form-group row">
         <label for="iban" class="col-sm-2 col-form-label">IBAN</label>

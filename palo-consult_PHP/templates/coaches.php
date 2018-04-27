@@ -59,15 +59,13 @@
                                 <p class="card-text"><?php echo $ver_usuarios["SobreMi"]?></p>
                               </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><strong>Empresa:</strong> <?php echo $ver_usuarios["Empresa"]?></li>
-                                    <li class="list-group-item"><strong>Idioma:</strong> <?php echo $ver_usuarios["Idioma"]?></li>
+                                    <li class="list-group-item"><strong>Enterprise:</strong> <?php echo $ver_usuarios["Empresa"]?></li>
+                                    <li class="list-group-item"><strong>Language:</strong> <?php echo $ver_usuarios["Idioma"]?></li>
                                     <li class="list-group-item"><strong>Coach:</strong> <?php echo $ver_usuarios["Coach"]?></li>
                                     <li class="list-group-item"><strong>Email:</strong> <?php echo $ver_usuarios["EmailContacto"]?></li>
-                                    <li class="list-group-item"><strong>Telefono:</strong> <?php echo $ver_usuarios["Telefono"]?></li>
+                                    <li class="list-group-item"><strong>Phone number:</strong> <?php echo $ver_usuarios["Telefono"]?></li>
                                 </ul>
-                                <div class="col-sm-5 my-3 col-centered">
-                                    <span class="btn btn-outline-primary btn-rounded waves-effect anadirUsuario" data-effect="fadeOut" role="button">Cerrar</span>   
-                                </div>
+                                
                             </div>
                         </div>   
     <?php ;  } }?>

@@ -1,41 +1,30 @@
-
-<?php  
-
-/*
-
-while ($usuario_usuarios = sqlsrv_fetch_array( $resultado_usuarios, SQLSRV_FETCH_ASSOC)){
-    echo "Nombre: " . $usuario_usuarios["Nombre"] . " Apellido: " . $usuario_usuarios["Apellido"] . " Email: " . $usuario_usuarios["EmailContacto"] . "<br>";
-}
-
-
-
-while ($usuario_empresas = sqlsrv_fetch_array( $resultado_empresa, SQLSRV_FETCH_ASSOC)){
-    echo "Nombre: " . $usuario_empresas["RazonSocial"] . " Apellido: " . $usuario_empresas["CIF"] . " Email: " . $usuario_empresas["CIF"];
-}
- 
- */
+<?php 
+if(empty($_GET)){
+}else{
+$variable = $_GET["candidato"];}
 ?>
 <div class="container-fluid">
     <div class="row" style="background-color: #FFFFFF; height: 150px">
         <div class="col mt-5 text-center" >
-            <h4 style="color: black">Hola <?php echo $_SESSION["empresas"]["RazonSocial"]?></h4>
-            <h5>Nosotros podemos ayudarte</h5>
+            <h4 style="color: black">Hi <?php echo $_SESSION["empresas"]["RazonSocial"]?></h4>
+            <h5>We can help you</h5>
         </div>
     </div>
 </div>
 
+
 <div class="container mt-3">
     <div class="row">
         <div class="col text-center">
-            <h5>Tu lista de Usuarios</h5>
+            <h5>Your candidate´s list</h5>
         </div>
     </div>
     <table class="table">
       <thead>
         <tr>
           
-          <th scope="col">Nombre</th>
-          <th scope="col">Apellido</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last name</th>
           <th scope="col">Email</th>
           <th scope="col">Coach</th>
         </tr>
@@ -53,26 +42,40 @@ while ($usuario_empresas = sqlsrv_fetch_array( $resultado_empresa, SQLSRV_FETCH_
     </table>
 </div>
 
+<div class="container-fluid mb-5">
+    <div class="row" style="background-color: #FFFFFF">
+        <div class="col mt-5 text-center" >
+            <div class="btn-group mx-3">
+                <a href="?candidato=usuario" class="btn btn-outline-info btn-rounded waves-effect" role="button">Add your new candidates</a>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<?php if (isset($_GET["candidato"])) {
+    include ('registro_' . $variable . '.php');
+} ?> 
+
 
 <div class="container mt-5">
     <div class="row">
         <div class="col text-center">
-            <h5>Tu lista de Usuarios</h5>
+            <h5>Your company´s general information</h5>
         </div>
     </div>
     <table class="table">
       <thead>
         <tr>
           
-          <th scope="col">Razón Social</th>
-          <th scope="col">CIF</th>
-          <th scope="col">Actividad</th>
-          <th scope="col">Pais</th>
-          <th scope="col">Dirección</th>
+          <th scope="col">Name</th>
+          <th scope="col">Vat Number</th>
+          <th scope="col">Activity</th>
+          <th scope="col">Country</th>
+          <th scope="col">Address</th>
           <th scope="col">Email</th>
-          <th scope="col">Teléfono</th>
-          <th scope="col">Persona Contacto</th>
-          <th scope="col">IBAN</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Contact Person</th>
+          <th scope="col">Bank Account</th>
         </tr>
       </thead>
       <tbody>

@@ -6,7 +6,6 @@
         <main>
             
             <?php include ($template_seccion) ?>
-            
         </main>
         
         <?php include("footer.php");?>

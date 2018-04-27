@@ -1,5 +1,4 @@
 
-
 <?php
 
 require "../startApp.php";
@@ -7,24 +6,15 @@ require "../startApp.php";
 
 //recoger las variables que me vienen por post
 
-/*$datos = [
-    "nombre" => $_POST["nombre"],
-    "email" => $_POST["email"],
-    "password" => $_POST["password"], 
-];*/
 
-$razon_social=$_POST["razonSocial"];
-$cif =$_POST["cif"];
-$actividad=$_POST["actividadSelec"];
-$pais=$_POST["paisSelec"];
-$direccion=$_POST["direccion"];
+$nombre=$_POST["nombre"];
+$apellido =$_POST["apellido"];
 $email=$_POST["email"];
 $password=$_POST["password"];
 $telefono=$_POST["telefono"];
-$persona_contacto=$_POST["personaContacto"];
-$codigo_unico=$_POST["codigoUnico"];
-$iban=$_POST["iban"];
-
+$idioma=$_POST["idiomaSelec"];
+$empresa=$_POST["empresaSelec"];
+//$foto=$_FILES["foto"]["name"];
 
 //validar las variables. Todas tienen que tener valor.
 /*if ($datos ["nombre"] == '' || 
@@ -41,8 +31,9 @@ $iban=$_POST["iban"];
     
     
 //Construir la sentencia SQL INSERT con las variables
-    $sql = "INSERT INTO [dbo].[Empresa] ([RazonSocial], [CIF], [Actividad], [Pais], [Direccion], [EmailContacto], [Clave], [Telefono], [PersonaContacto], [IBAN],[CodigoConfirmacion], [TipoRegistro])"
-            . " VALUES('$razon_social','$cif','$actividad','$pais','$direccion','$email','$password','$telefono','$persona_contacto','$iban','$codigo_unico', 1)";
+    $sql = "INSERT INTO [dbo].[Usuarios] ([Nombre], [Apellido], [EmailContacto], [Clave], [Telefono], [Idioma], [idEmpresa], [TipoRegistro], [Coach], [SobreMi], [Foto])"
+            . " VALUES('$nombre','$apellido','$email','$password','$telefono','$idioma','$empresa', 2,22, 'Hello, soon I will write about me so you can know me a bit better', 'default.jpg')";
+    
     
  if(sqlsrv_query($conn,$sql)){
      /*$id_usuario= mysqli_insert_id($conexion);*/
@@ -54,7 +45,6 @@ $iban=$_POST["iban"];
      if($resultado){
          $_SESSION["nombre"] = sqlsrv_fetch_array( $resultado, SQLSRV_FETCH_ASSOC);
      }*/
-     
      $template_seccion = "../templates/auth/registro.php";
  }else{
      $template_seccion = "../templates/auth/error_registro.php";

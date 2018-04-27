@@ -8,7 +8,7 @@ $template_seccion = "../../templates/coaches.php";
 $sql_usuarios = "SELECT * FROM [dbo].[Usuarios] WHERE Coach = " . $_SESSION["coach"]["id"] . ";";
 $resultado_usuarios = sqlsrv_query( $conn, $sql_usuarios );
 
-$sql_usuarios_libres = "SELECT * FROM [dbo].[Usuarios] WHERE Coach IS null;";
+$sql_usuarios_libres = "SELECT * FROM [dbo].[Usuarios] WHERE Coach = 22;";
 $resultado_usuarios_libres = sqlsrv_query( $conn, $sql_usuarios_libres );
 
 
@@ -22,7 +22,7 @@ $resultado_ver_usuarios = sqlsrv_query( $conn, $sql_ver_usuarios);
 }elseif(isset ($_GET["eliminarId"])){
 $variableEliminarId = $_GET["eliminarId"];
 
-$sql_eliminar_usuarios = "UPDATE [dbo].[Usuarios] SET Coach = NULL WHERE id = " . $variableEliminarId . ";";
+$sql_eliminar_usuarios = "UPDATE [dbo].[Usuarios] SET Coach = 22 WHERE id = " . $variableEliminarId . ";";
 $resultado_eliminar_usuarios = sqlsrv_query( $conn, $sql_eliminar_usuarios);
 if($resultado_eliminar_usuarios){
     header("Location: index.php");

@@ -1,5 +1,5 @@
 <?php
-$root = "/proyecto_modulo1_PHP/";
+$root = "/palo-consult_PHP/";
 
 /** CONECTAR A BASE DE DATOS */
 

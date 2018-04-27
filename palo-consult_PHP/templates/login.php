@@ -47,7 +47,7 @@ $variable = $_GET["tipo"];}
 <div class="container my-5"> 
  <?php if(isset($mensaje)){?>
     <div class="alert alert-success" role="alert">
-        <?php echo $mensaje?></p>
+        <p><?php echo $mensaje?></p>
     </div> 
     <?php } ?>   
     
