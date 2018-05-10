@@ -1,0 +1,31 @@
+ ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Applies styling to any li descendants of ul (descendant combinator) */
+  ul li {
+    text-align: left;
+    /* Prevents default bullet points */
+    list-style-type: none;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    background-color: #eee;
+    /* First value sets top and bottom padding; second value sets right and left */
+    padding: 1.5px 0;
+  }
+  
+  /* Set all odd list items to a different color (zebra stripes) */
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Sets darker background color on hover over list items */
+  ul li:hover {
+    background-color: #ddd;
+  }
+  
+  .strike {
+    text-decoration: line-through;
+  }
