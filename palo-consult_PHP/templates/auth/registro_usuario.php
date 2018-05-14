@@ -1,14 +1,11 @@
-
- 
-
- <div class="row">
+<div class="row">
         <div class="thumbnail text-center">
             <img src="../media/registro-completado" class="img-fluid" alt="registro">
         </div>
         <div class="container caption col-sm-4 offset-sm-4" style="background-color: #88C461; height: 200px; opacity: 0.8">
             <div class="row">
                 <div class="col mt-4" align="center">
-                    <h4 style="color: #FFFFFF">Thanks for registering</h4>
+                    <h4 style="color: #FFFFFF">You have registered a new candidate</h4>
                 </div> 
             </div>
             <div class="row">

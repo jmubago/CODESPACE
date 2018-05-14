@@ -43,7 +43,7 @@ $resultado_select_empresa = sqlsrv_query( $conn, $sql_select_empresa );
         </div>
       </div>
       <div class="form-group row">
-        <label for="nombre" class="col-sm-2 col-form-label">Phono number</label>
+        <label for="nombre" class="col-sm-2 col-form-label">Phone number</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Candidate´s phone number">
         </div>
@@ -60,7 +60,7 @@ $resultado_select_empresa = sqlsrv_query( $conn, $sql_select_empresa );
             <option value="6">Japanese</option>
           </select>
         </div>
-      </div> 
+      </div>  
       <div class="form-group row">
         <label for="empresaSelec" class="col-sm-2 col-form-label">Enterprise</label>
         <div class="col-sm-10">
@@ -68,7 +68,7 @@ $resultado_select_empresa = sqlsrv_query( $conn, $sql_select_empresa );
                     <option value="<?php echo $_SESSION["empresas"]["id"]?>"><?php echo $_SESSION["empresas"]["RazonSocial"]?></option>
           </select>
         </div>
-      </div> 
+      </div>
         
       
       <!--
@@ -118,11 +118,11 @@ $resultado_select_empresa = sqlsrv_query( $conn, $sql_select_empresa );
                 }
              },
             messages: {
-                nombre: "Debes introducir tu nombre",
-                email: "Debes introducir un email válido",
-                password: "Debes introducir una contraseña válida",
-                repassword: "Debes introducir la misma contraseña",
-                telefono: "Debes introducir tu teléfono",
+                nombre: "You have to introduce a name. Min 2 characters",
+                email: "You have to introduce a valid email",
+                password: "You have to introduce a password. Min 6 characters, max 12 characters",
+                repassword: "You have to introduce the same password",
+                telefono: "You have to introduce a phone number",
             }
         })
     })

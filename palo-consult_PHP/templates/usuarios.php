@@ -25,14 +25,13 @@
                                 <div class="card-body">
                                     <div class="row">
                                       <div class="col-sm-5 col-centered">  
-                                          <a href="#####" class="verInfo btn btn-outline-primary btn-rounded waves-effect" role="button">Info update</a>
+                                          <a href="<?php $root?>modificarDatos.php" class="verInfo btn btn-outline-primary btn-rounded waves-effect" role="button">Info update</a>
                                       </div>    
                                     </div>        
                                 </div>
                             </div>
-                        </div>   
-    
+                        </div>  
         </div>    
-    </div>   
-    
+    </div>  
 </div>
+

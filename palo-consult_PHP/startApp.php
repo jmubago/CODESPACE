@@ -1,6 +1,14 @@
 <?php
 $root = "/palo-consult_PHP/";
 
+/** CARGAR LIBRERIAS NECESARIAS PARA NUESTRO PROYECTO */
+
+require 'libs/PHPMailer/src/Exception.php';
+require 'libs/PHPMailer/src/PHPMailer.php';
+require 'libs/PHPMailer/src/SMTP.php';
+require 'libs/funciones.php'; 
+
+
 /** CONECTAR A BASE DE DATOS */
 
 $serverName = "localhost"; //serverName\instanceName

@@ -35,7 +35,7 @@ $variable = $_GET["candidato"];}
             echo "<tr><td>" . $usuario_usuarios["Nombre"] 
                     . "</td><td>" . $usuario_usuarios["Apellido"] 
                     . "</td><td>" . $usuario_usuarios["EmailContacto"]
-                    . "</td><td>" . $usuario_usuarios["Coach"] 
+                    . "</td><td>" . $usuario_usuarios["Coach"] . " " . $usuario_usuarios["CoachApellido"]  
                     . "</td></tr>";
         } ?>
       </tbody>
@@ -54,7 +54,14 @@ $variable = $_GET["candidato"];}
 
 <?php if (isset($_GET["candidato"])) {
     include ('registro_' . $variable . '.php');
-} ?> 
+} ?>
+
+<?php if (isset ($registro_usuario)){
+    include ( $root . "templates/auth/registro_usuario.php");
+ }
+?>
+
+
 
 
 <div class="container mt-5">

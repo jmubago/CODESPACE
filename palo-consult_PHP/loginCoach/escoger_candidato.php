@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require "../startApp.php";
@@ -57,9 +56,10 @@ $empresa=$_POST["empresaSelec"];
  
  //Enviar un email al administrados de la página
  
+ $subject = $nombre . " " . $apellido . " you have been added to Palo Consult";
 
 // In case any of our lines are larger than 70 characters, we should use wordwrap()
-$message = "Hello " . $nombre . " " . $apellido . " you have just just been added to our system at Palo Consult, so you can now start enjoying our Outplacement service. Please, be patient until one of our Coachs reaches you through email. <br>"
+$message = "Hello " . $nombre . " " . $apellido . " you have just just been added to our system at Palo Consult, so you can now start enjoying our Outplacement service. Please, be patient until you are assigned one of our Coachs. <br>"
             . "For login in please use the following information: <br><br>" 
             . "Email address: " . $email . "<br>"
             . "Password: " . $password . "<br><br>"
@@ -70,7 +70,12 @@ $message = "Hello " . $nombre . " " . $apellido . " you have just just been adde
 //echo " This is the name to whom is being sent to: " . $nombre;
 //echo " This is the message is being sent: " . $message;
 
-$subject = $nombre . " " . $apellido . " you have been added to Palo Consult";
+//$subject = $nombre . " " . $apellido . " a Coach has selected you";
+
+
+
+
+echo $subject;
 
 enviarEmail ($email,$message,$nombre,$subject);
     
