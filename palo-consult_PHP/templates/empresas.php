@@ -46,7 +46,7 @@ $variable = $_GET["candidato"];}
     <div class="row" style="background-color: #FFFFFF">
         <div class="col mt-5 text-center" >
             <div class="btn-group mx-3">
-                <a href="?candidato=usuario" class="btn btn-outline-info btn-rounded waves-effect" role="button">Add your new candidates</a>
+                <a href="?candidato=usuario" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Add your new candidates</a>
             </div> 
         </div>
     </div>

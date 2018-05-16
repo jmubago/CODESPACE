@@ -3,6 +3,9 @@ float: none;
 margin: 0 auto;
 }
 
+#candidateForm{
+    display:none;
+}
 
 .thumbnail {
     position: relative;
