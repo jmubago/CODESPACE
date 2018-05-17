@@ -110,7 +110,7 @@ if(isset ($_POST["candidateFormSelec"])){
     $sql = "UPDATE dbo.Usuarios"   
             . " SET Horas = " . $hours . ", Comentario1='$comentario1', Comentario2='$comentario2', Comentario3='$comentario3', Comentario4='$comentario4'"  
             . " where id=" . $nombreId;
-    
+    echo $sql;
     $resultado = sqlsrv_query( $conn, $sql );
 
 

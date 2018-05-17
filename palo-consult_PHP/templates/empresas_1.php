@@ -42,39 +42,11 @@ $variable = $_GET["candidato"];}
                 </td><td><?php echo $usuario_usuarios["Coach"] . " " . $usuario_usuarios["CoachApellido"]?>
                 </td><td><?php echo $horas?>  
                 </td><td> <button class="verInfo btn btn-outline-primary btn-rounded waves-effect" type="button" data-toggle="collapse" data-target="#collapseReportCandidate<?php echo $usuario_usuarios["id"]?>" <?php echo $disabled?>>See report</button>    
-                </td><td> <button id="Jquery_report" class="verInfo btn btn-outline-primary btn-rounded waves-effect" type="button" data-toggle="collapse" data-target="#collapseReportCandidateJQUERY<?php echo $usuario_usuarios["id"]?>" <?php echo $disabled?>>jQuery</button>    
-                
                 </td></tr> 
       </tbody>
       
     </table>
     <div class="container mt-3">
-                    <div class="row">
-                        <div class="col align-content-center">
-                            <div class="collapse" id="collapseReportCandidate<?php echo $usuario_usuarios["id"]?>">
-                                <div class="card card-body">
-                                    <div class="row ">
-                                        <div class="col text-center ">
-                                            <h5>More candidate´s info</h5>
-                                        </div>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><strong>Name:</strong> <?php echo $usuario_usuarios["Nombre"]?></li>
-                                        <li class="list-group-item"><strong>Sessions completed:</strong> <?php echo " " . $horas?></li>
-                                        <li class="list-group-item"><strong>Candidate´s Glassdor rating:</strong> <?php echo $usuario_usuarios["Comentario1"]?></li>
-                                        <li class="list-group-item"><strong>Candidate´s strong points:</strong> <?php echo $usuario_usuarios["Comentario2"]?></li>
-                                        <li class="list-group-item"><strong>Candidate´s weak points:</strong> <?php echo $usuario_usuarios["Comentario3"]?></li>
-                                        <li class="list-group-item"><strong>Other comments:</strong> <?php echo $usuario_usuarios["Comentario4"]?></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-      <?php } ?>
-</div>
-
-<div id="Jquery_report_result" class="container mt-3">
                     <div class="row">
                         <div class="col align-content-center">
                             <div class="collapse" id="collapseReportCandidate<?php echo $usuario_usuarios["id"]?>">
@@ -93,6 +65,8 @@ $variable = $_GET["candidato"];}
                         </div>
                     </div>
                 </div>
+      <?php } ?>
+</div>
 
 <div class="container-fluid mb-5">
     <div class="row" style="background-color: #FFFFFF">

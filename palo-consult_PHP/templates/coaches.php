@@ -16,7 +16,8 @@
         </div>
     </div>
     <div class="row ">
-<?php while ($usuario_usuarios = sqlsrv_fetch_array( $resultado_usuarios, SQLSRV_FETCH_ASSOC)){?>   
+<?php while ($usuario_usuarios = sqlsrv_fetch_array( $resultado_usuarios, SQLSRV_FETCH_ASSOC)){?>  
+        <?php if ($usuario_usuarios["Horas"] != null){$horas = $usuario_usuarios["Horas"];}else{ $horas = "  Not completed";}?>
                     <div class="col-sm-12 col-md-6 col-lg-4 my-3">
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="<?php echo $root ?>media/fotoUsuarios/<?php echo $usuario_usuarios["Foto"]?>" alt="<?php echo $usuario_usuarios["Nombre"] . " " . $usuario_usuarios["Apellido"]?>">
@@ -27,12 +28,9 @@
                           <div class="card-body">
                               <div class="row">
                                 <div class="col-sm-5">  
-                                    <button href="?verId=<?php echo $usuario_usuarios["id"]?>" class="verInfo btn btn-outline-primary btn-rounded waves-effect"  data-toggle="collapse" data-target="#collapseInfoCandidate<?php echo $usuario_usuarios["id"]?>">
+                                    <button class="verInfo btn btn-outline-primary btn-rounded waves-effect"  data-toggle="collapse" data-target="#collapseInfoCandidate<?php echo $usuario_usuarios["id"]?>">
                                         See + info
                                     </button>
-                                    <?php if(isset ($_GET["verId"])){
-                                                   $variableVerId = $_GET["verId"];
-                                                    echo $variableVerId ; }?>
                                 </div>
                                 <div class="col-sm-5 mt-2">
                                     <a href="?eliminarId=<?php echo $usuario_usuarios["id"]?>" class=""><i class="fas fa-ban botton-eliminar"></i></a>
@@ -54,17 +52,8 @@
                                             <li class="list-group-item"><strong>Coach:</strong> <?php echo $usuario_usuarios["Coach"]?></li>
                                             <li class="list-group-item"><strong>Email:</strong> <?php echo $usuario_usuarios["EmailContacto"]?></li>
                                             <li class="list-group-item"><strong>Phone number:</strong> <?php echo $usuario_usuarios["Telefono"]?></li>
+                                            <li class="list-group-item"><strong>Sessions completed:</strong><?php echo " " . $horas?></li>
                                         </ul>
-                                        <div class="col-sm-12 mt-3 text-center"> 
-                                            <form id="crearPDF" method="post" action="<?php echo $root?>libs/pdf/index.php" enctype="multipart/form-data">
-                                                <div class="col-sm-12 mt-3 text-center">  
-                                                    <a href="?verId=<?php echo $usuario_usuarios["id"]?>" class="verInfo btn btn-outline-primary btn-rounded waves-effect" >See +++ info</a>
-                                                </div>
-                                            </form>
-                                            <?php if(isset ($_GET["verId"])){
-                                                   $variableVerId = $_GET["verId"];
-                                                    echo $variableVerId ; }?>
-                                        </div>
                                     </div>
                                   </div>
                                 </div>
@@ -152,7 +141,6 @@
         <?php echo $mensaje_error?></p>
     </div> 
     <?php } ?>
-    
 </div>   
 
 
