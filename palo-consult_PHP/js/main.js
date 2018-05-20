@@ -7,4 +7,8 @@ $("#Jquery_report").click(function(){
         $("#Jquery_report_result").toggle();
     });
 
+$("#your-candidate-button").click(function(){
+    $("#your-candidate").toggle();
+});
+
 })

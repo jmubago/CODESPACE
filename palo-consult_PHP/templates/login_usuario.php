@@ -1,7 +1,7 @@
 <div class="container my-5">  
     <?php if(isset($error)){?>
     <div class="alert alert-danger" role="alert">
-        <?php echo $error ?></p>
+        <?php echo $error ?>
     </div> 
     <?php } ?>
     <div class="row">

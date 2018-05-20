@@ -18,33 +18,6 @@ $resultado_empresas_formulario = sqlsrv_query( $conn, $sql_empresas_formulario )
 $sql_usuarios = "SELECT us.[id], us.[Nombre], us.[Apellido], us.[EmailContacto], us.[Clave], us.[Telefono], us.[SobreMi], us.[Foto], us.[Horas], idi.[Idioma], em.[RazonSocial] AS Empresa, co.[Nombre] AS Coach FROM [dbo].[Usuarios] AS us INNER JOIN [dbo].[Idioma] AS idi ON us.Idioma = idi.id INNER JOIN [dbo].[Empresa] AS em ON us.idEmpresa = em.id INNER JOIN [dbo].[Coach] AS co ON us.Coach = co.id WHERE us.Coach=" . $_SESSION["coach"]["id"] . ";";
 $resultado_usuarios = sqlsrv_query( $conn, $sql_usuarios );
 
-        
-
-//Botón PDF
-/*
-if(isset ($_GET["verId"])){
-    $variableVerId = $_GET["verId"];
-    $sql_boton="SELECT * FROM dbo.PDF where idUsuario =" . $variableVerId;
-    $resultado_boton = sqlsrv_query( $conn, $sql_boton );
-    echo $sql_boton;
-    if($resultado_boton){
-        //echo "    se ha realizado query";
-        while ($idUsuario = sqlsrv_fetch_array( $resultado_boton, SQLSRV_FETCH_ASSOC)){
-            echo "    se hace el bucle   ";
-            //echo "Este es el idUsuario de la tabla PDF:  " . $idUsuario["idUsuario"];
-            $idUsuario["id"];
-            echo $idUsuario["id"];
-            
-                if($variableVerId == $idUsuario["idUsuario"]){
-                    echo  "  BIENNN  " . $idUsuario["idUsuario"];
-                    $disabled= "disabled";
-                    //$template_seccion= '../libs/pdf/main.php';
-                    header("href=\"http://localhost/palo-consult_PHP/libs/pdf/\"");
-                }
-        }
-    }
-}
-*/
 
 if(empty($_GET)){
 }elseif(isset ($_GET["eliminarId"])){
@@ -52,23 +25,20 @@ if(empty($_GET)){
 
         $sql_eliminar_usuarios = "UPDATE [dbo].[Usuarios] SET Coach = 22 WHERE id = " . $variableEliminarId . ";";
         $resultado_eliminar_usuarios = sqlsrv_query( $conn, $sql_eliminar_usuarios);
-        echo $variableEliminarId;
     if($resultado_eliminar_usuarios){
-        header("Location: index.php");
+        $mensaje = "You have successfully deleted your candidate";
+        //header("Location: index.php");
+       $_GET=null;
     }
-}elseif(isset ($_GET["formularioId"])){
-    $variableEliminarId = $_GET["formularioId"];
-    echo "ID del usuario formulario " . $variableEliminarId;
-    
-    $sql_usuario_formulario = "";
 
 }elseif (isset ($_GET["anadirId"])){
     $variableAnadirId = $_GET["anadirId"]; 
 
     $sql_anadir_usuarios = "UPDATE [dbo].[Usuarios] SET Coach =" . $_SESSION["coach"]["id"] . "WHERE id =" . $variableAnadirId . ";";
     $resultado_anadir_usuarios = sqlsrv_query( $conn, $sql_anadir_usuarios);
+    $mensaje = "You have successfully added a new candidate";
         if($resultado_anadir_usuarios){
-
+            $mensaje = "You have successfully added a new candidate";
             $sql = "SELECT * FROM [dbo].[Usuarios] WHERE id = " . $variableAnadirId . ";";
             $resultado = sqlsrv_query( $conn, $sql );
             if($resultado){
@@ -90,6 +60,7 @@ if(empty($_GET)){
                     //header("Location: index.php");
                     Header('Location: ' . $_SERVER['PHP_SELF']);
                     //Exit();
+                    $mensaje = "You have successfully added a new candidate";
                 }
             }
 

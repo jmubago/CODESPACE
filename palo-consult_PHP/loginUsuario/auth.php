@@ -14,6 +14,7 @@ if($usuario_email == '' && $usuario_password == ''){
 //$sql= "SELECT us.[id], us.[Nombre], us.[Apellido], us.[EmailContacto], us.[Clave], us.[Telefono], us.[SobreMi], us.[Foto], idi.[Idioma], em.[RazonSocial] AS Empresa, co.[Nombre] AS Coach FROM [dbo].[Usuarios] AS us INNER JOIN [dbo].[Idioma] AS idi ON us.Idioma = idi.id INNER JOIN [dbo].[Empresa] AS em ON us.idEmpresa = em.id INNER JOIN [dbo].[Coach] AS co ON us.Coach = co.id WHERE us.EmailContacto = '" . $usuario_email . "' AND us.Clave = '" . $usuario_password . "';"; 
 $sql = "SELECT * FROM [dbo].[Usuarios] WHERE EmailContacto = '" . $usuario_email . "' AND Clave = '" . $usuario_password . "';";
 $resultado = sqlsrv_query( $conn, $sql );
+echo $resultado;
 
 
 /*
