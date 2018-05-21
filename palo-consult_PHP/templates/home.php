@@ -1,18 +1,12 @@
-<div class="container-fluid">
-    <!--<div class="filtro">
-        <img src="../media/adult-business-desk-296886.jpg" class="img-fluid" alt="Responsive image">
-    </div>-->
-    
-    
-    
+<div class="container-fluid imagenes-iniciales">   
     <div class="row">
-        <div class="thumbnail text-center">
+        <div class="text-center">
             <img src="media/adult-business-desk-296886.jpg" class="img-fluid" alt="Espacio de trabajo">
         </div>
-        <div class="container caption col-sm-4 offset-sm-4" style="background-color: #88C461; height: 200px; opacity: 0.8">
+        <div class=" green-background-home container caption col-sm-4 offset-sm-4" >
             <div class="row">
-                <div class="col mt-4" align="center">
-                    <h4 style="color: #FFFFFF">¿Conoces tu puntuación en Glassdoor?</h4>
+                <div class="green-background-text col mt-4" align="center">
+                    <h4>What is your Glassdoor rating?</h4>
                 </div> 
             </div>
             <div class="row">
@@ -21,8 +15,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col mt-4" align="center">
-                    <h5 style="color: #FFFFFF">Seguro que te interesa saberlo</h5>
+                <div class="green-background-text col mt-4" align="center">
+                    <h5>Surely you want to find it out</h5>
                 </div>
             </div>
         </div>
@@ -31,41 +25,39 @@
 <div class="container-fluid">
     <div class="row" style="background-color: #FFFFFF; height: 150px">
         <div class="col mt-5" align="center">
-            <h4 style="color: black">¿Quieres mejorar tu puntuación en Glassdoor?</h4>
-            <h5>Nosotros podemos ayudarte</h5>
+            <h4 style="color: black">Do you want to improve your Glassdoor reviews?</h4>
+            <h5 style="color: black">We can help you</h5>
         </div>
     </div>
 </div>
 <div class="container-fluid" style="background-color: #D5D5D5; height: 400px">
     <div class="row">
         <div class="col-3 mt-4 offset-2" style="text-align: center">
-            <h4>Análisis interno de la empresa</h4>
+            <h4 style="color: black">Internal analysis of your enterprise</h4>
         </div>        
     </div>
     <div class="row">
         <div class="col-3 mt-3 offset-2">
             <img src="media/graficas.jpg" class="img-fluid" alt="Responsive image">
         </div>
-        <div class="col-3 mt-5 offset-1" style="text-align: center">
-            <h5>Realizamos un análisis completo de tu empresa en la plataforma de Glassdor y lo comparamos con tu competencia.</h5>
-            <br>
-            <h5>Te ofrecemos las mejores soluciones para que puedas mejorar de manera orgánica y mantenida en el tiempo tus resultados</h5>
-            <a class="btn btn-primary mt-4" href="<?php echo $root?>registro/index.php" role="button">Regístrate</a>
+        <div class="col-3 mt-5 offset-1">
+            <h5 style="color: black">We make a complete internal analysis of your enterprise in Glassdoor and we compare it with your competition.</h5>
+            <h5 style="color: black">We offer the best solutions so you can organically improve and maintain in the long run your results.</h5>
+            <a class="btn btn-primary mt-4" href="<?php echo $root?>registro/index.php" role="button">Register</a>
         </div>
     </div>
 </div>
 <div class="container-fluid" style="background-color: #FFFFFF; height: 400px">
     <div class="row">
         <div class="col-3 mt-4 offset-6" style="text-align: center">
-            <h4>Servicio de Outplacement</h4>
+            <h4 style="color: black">Outplacement service</h4>
         </div>        
     </div>
     <div class="row">
         
-        <div class="col-3 mt-5 offset-2" style="text-align: center">
-            <h5>La mejor manera de cuidar a tus empleados, es preocuparte por ellos incluso cuando dejan de trabajar para ti.</h5>
-            <br>
-            <h5>Los servicios de Outplacement son la solución perfecta para la transición que supone el dejar de tener un empleo.</h5>
+        <div class="col-3 mt-5 offset-2">
+            <h5 style="color: black">The best way to look after your employees is taking care of them even when they do not work for you anymore.</h5>
+            <h5 style="color: black">The outplacement services are the perfect solution for employees transition of being employed to be unemployed</h5>
             <a class="btn btn-primary mt-4" href="<?php echo $root?>login/index.php" role="button">Login</a>
         </div>
         <div class="col-3 mt-3 offset-1" style="text-align: center">

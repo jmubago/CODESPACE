@@ -18,15 +18,11 @@ if($oldPassword === $_SESSION["usuario"]["Clave"]){
     if(sqlsrv_query($conn,$sql)){
      
         $_SESSION["usuario"]["Clave"]=$newPassword;
-        $mensaje_password = "Your password has been modified";
-        $template_seccion = "modificar_usuario.php";
-    }else{
-        $mensaje_error = "There has been a problem changing your password. Please try again";
-    }
-    
+        
+        header("Location: mi-cuenta/index.php?password=..");
+    }   
 }else{
-    $mensaje_error = "Please write your current password";
-    $template_seccion = "modificar_usuario.php";
+     header("Location: mi-cuenta/index.php?passwordError=..");
 }
  
  

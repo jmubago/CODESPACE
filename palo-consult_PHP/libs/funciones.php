@@ -37,7 +37,7 @@ function enviarEmail ($email,$message,$nombre,$subject) {
 
        //Content
        $mail->isHTML(true);                                  // Set email format to HTML
-       $mail->Subject = "You have a new message from Palo Consult";
+       $mail->Subject = $subject;
        $mail->Body    = $message;
        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

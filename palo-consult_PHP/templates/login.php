@@ -3,7 +3,7 @@ if(empty($_GET)){
 }else{
 $variable = $_GET["tipo"];}
 ?>
-<div class="container">
+<div class="container-fluid imagenes-iniciales">
    <div class="row">
         <div class="col mt-1 text-center">
             <h5>Login</h5>
@@ -15,9 +15,9 @@ $variable = $_GET["tipo"];}
         <div class="card">
             <img class="img-fluid" src="../media/login-usuario.jpg" alt="Card image cap">  
           <div class="card-body">
-            <h5 class="card-title">Para los usuarios</h5>
-            <p class="card-text">Si estás disfrutando de nuestros servicios de Outplacement por parte de nuestros Coach, este es tu panel.</p>
-                <a href="?tipo=usuario" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Usuario</a>
+            <h5 class="card-title">Candidates</h5>
+            <p class="card-text">If you are one of the candidates benefiting from our outplacement services login here.</p>
+                <a href="?tipo=usuario" class="btn btn-primary btn-rounded waves-effect" role="button">Candidates</a>
           </div>
         </div>
       </div>
@@ -25,9 +25,9 @@ $variable = $_GET["tipo"];}
         <div class="card">
             <img class="img-fluid" src="../media/login-coach.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Para los coach</h5>
-            <p class="card-text">Si ya formas parte de nuestro pedazo de grupo de Coachs tienes accede aquí a tu panel.</p>
-                <a href="?tipo=coach" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Coach</a>
+            <h5 class="card-title">Coaches</h5>
+            <p class="card-text">If you are part of our amazing coaching team you have to access to your panel here</p>
+                <a href="?tipo=coach" class="btn btn-primary btn-rounded waves-effect" role="button">Coach</a>
           </div>
         </div>
       </div>
@@ -35,9 +35,9 @@ $variable = $_GET["tipo"];}
         <div class="card">
             <img class="img-fluid" src="../media/login-empresa.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Para las empresas</h5>
-            <p class="card-text">Si eres una de las afortunadas empresas que confía en nuestros servicios, puedes acceder aquí a tu panel.</p>
-            <a href="?tipo=empresas" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Empresa</a>
+            <h5 class="card-title">Enterprises</h5>
+            <p class="card-text">If you are one of the many enterprises who trust in our services, access your panel here</p>
+            <a href="?tipo=empresas" class="btn btn-primary btn-rounded waves-effect" role="button">Enterprise</a>
           </div>
         </div>
       </div>  

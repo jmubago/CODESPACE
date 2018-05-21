@@ -1,4 +1,4 @@
-<div class="container my-5">  
+<div class="container imagenes-iniciales">  
     <?php if(isset($error)){?>
     <div class="alert alert-danger" role="alert">
         <?php echo $error ?>
@@ -6,7 +6,7 @@
     <?php } ?>
     <div class="row">
         <div class="col mt-1 text-center">
-            <h5>Te estás logeando como Usuario</h5>
+            <h5>You are login as Candidate</h5>
         </div>    
     </div>
     <form method="POST" action="<?php echo $root?>loginUsuario/auth.php" id="login">
@@ -20,7 +20,7 @@
           <input id="password" type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-success">Login</button>
     </form>
 </div>
 <script>

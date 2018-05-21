@@ -1,7 +1,7 @@
-<div class="container-fluid mt-5">
-    <div class="row" style="background-color: #FFFFFF">
-        <div class="col mt-2 text-center" >
-            <h4 style="color: black">Are you done with your outplacement service</h4>
+<div class="container">
+    <div class="row">
+        <div class="col mt-2 text-center">
+            <h4 style="color: black">Are you done with your coaching sessions?</h4>
             <h5>Maybe it´s time to fill up the candidate´s form</h5>
         </div>
     </div>
@@ -47,6 +47,6 @@
             <label for="comentario4">Comment 4</label>
             <textarea name="comentario4" class="form-control" placeholder="Comment 04"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-success">Submit</button>
         </form>
       </div>

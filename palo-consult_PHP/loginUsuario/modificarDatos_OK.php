@@ -22,16 +22,11 @@ $sobreMi=$_POST["comentario"];
      $_SESSION["usuario"]["Telefono"]=$telefono;
      $_SESSION["usuario"]["SobreMi"]=$sobreMi;
      
-     $mensaje_datos = "Your data has been modified";
-     $template_seccion = "modificar_usuario.php";
+     header("Location: mi-cuenta/index.php?data=..");
+     
  }else{
      $mensaje_datos = "There has been a problem changing your data. Please try again";
  }
- 
- 
- 
-
-    
  
 
 include("../templates/main.php");

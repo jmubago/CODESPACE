@@ -36,11 +36,11 @@ while( $row = sqlsrv_fetch_array( $resultado, SQLSRV_FETCH_ASSOC))
         $template_seccion = "bienvenida.php";
     }
     else {
-        $error = "Error de autentificación";
+        $error = "Wrong password or email";
         $template_seccion = "../templates/login_empresas.php";
     }
 }else{
-        $error = "Error de conexión";
+        $error = "Connection error";
         $template_seccion = "../templates/login_empresas.php";
 
 }

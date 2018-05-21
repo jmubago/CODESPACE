@@ -1,7 +1,8 @@
-<div id="your-candidate" class="container my-5">
+<div class="container">
     <div class="row ">
-        <div class="col text-center mt-5">
-            <h5>Your candidates</h5>
+        <div class="col mt-2 text-center">
+            <h4 style="color: black">Your candidates</h4>
+            <h5>You are the best, they truly appreciate your help</h5>
         </div>
     </div>
     <div class="row ">
@@ -17,7 +18,7 @@
                           <div class="card-body" align="center">
                               <div class="row ml-3" >
                                 <div class="col-sm-5">  
-                                    <button class="verInfo btn btn-outline-success btn-rounded waves-effect"  data-toggle="collapse" data-target="#collapseInfoCandidate<?php echo $usuario_usuarios["id"]?>">
+                                    <button class="verInfo btn btn-success btn-rounded waves-effect"  data-toggle="collapse" data-target="#collapseInfoCandidate<?php echo $usuario_usuarios["id"]?>">
                                         See + info
                                     </button>
                                 </div>

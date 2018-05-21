@@ -20,29 +20,32 @@ $resultado_usuarios = sqlsrv_query( $conn, $sql_usuarios );
 
 
 if(empty($_GET)){
+    $_GET["coachButton"]="inicio";
 }elseif(isset ($_GET["eliminarId"])){
         $variableEliminarId = $_GET["eliminarId"];
 
         $sql_eliminar_usuarios = "UPDATE [dbo].[Usuarios] SET Coach = 22 WHERE id = " . $variableEliminarId . ";";
         $resultado_eliminar_usuarios = sqlsrv_query( $conn, $sql_eliminar_usuarios);
     if($resultado_eliminar_usuarios){
-        $mensaje = "You have successfully deleted your candidate";
+        $mensaje_candidatos = "You have successfully deleted your candidate";
         //header("Location: index.php");
-       $_GET=null;
+        $_GET["coachButton"]="inicio";
+       //$_GET=null;
     }
 
 }elseif (isset ($_GET["anadirId"])){
+    
     $variableAnadirId = $_GET["anadirId"]; 
 
     $sql_anadir_usuarios = "UPDATE [dbo].[Usuarios] SET Coach =" . $_SESSION["coach"]["id"] . "WHERE id =" . $variableAnadirId . ";";
     $resultado_anadir_usuarios = sqlsrv_query( $conn, $sql_anadir_usuarios);
-    $mensaje = "You have successfully added a new candidate";
+    $mensaje_candidatos = "You have successfully added a new candidate";
         if($resultado_anadir_usuarios){
-            $mensaje = "You have successfully added a new candidate";
+           
             $sql = "SELECT * FROM [dbo].[Usuarios] WHERE id = " . $variableAnadirId . ";";
-            $resultado = sqlsrv_query( $conn, $sql );
-            if($resultado){
-            $usuario = sqlsrv_fetch_array( $resultado, SQLSRV_FETCH_ASSOC);
+            $resultado_query = sqlsrv_query( $conn, $sql );
+            if($resultado_query){
+            $usuario = sqlsrv_fetch_array( $resultado_query, SQLSRV_FETCH_ASSOC);
                 if ($usuario){
 
                     $_SESSION["usuario"] = $usuario;
@@ -56,14 +59,16 @@ if(empty($_GET)){
                             . "If you want you can either write your assigned Coach or wait for him/her to write to you. <br>"
                             . "Kind regards, <br><br>"
                             . "The Team of Palo Consult";
-                    enviarEmail ($email,$message,$nombre);
+                    $subject = "A new Coach from Palo Consult has contacted you";
+                    enviarEmail ($email,$message,$nombre,$subject);
+                    
+                    //Header('Location: ' . $_SERVER['PHP_SELF']);
+                    
                     //header("Location: index.php");
-                    Header('Location: ' . $_SERVER['PHP_SELF']);
                     //Exit();
-                    $mensaje = "You have successfully added a new candidate";
+                     $_GET["coachButton"]="inicio";
                 }
             }
-
         }
 }
 
@@ -88,7 +93,7 @@ if(isset ($_POST["candidateFormSelec"])){
     if($resultado){
 
 
-        $mensaje = "Candidate´s data has been correctly added";
+        $mensaje_candidatos = "Candidate´s data has been correctly added";
         //$template_seccion = "../templates/coaches.php";  
     }else{
         $mensaje_error = "Candidate´s data could not be added";
@@ -99,4 +104,4 @@ if(isset ($_POST["candidateFormSelec"])){
 
 
 include '../../templates/main.php';
-require '../../endApp.php';
+//require '../../endApp.php';

@@ -10,9 +10,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo $root?>index.php">Palo Consult<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo $root?>glassdoor/index.php">Glassdoor <span class="sr-only">(current)</span></a>
-      </li>
       <?php if(isset($_SESSION["coach"])) { ?>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $root?>loginCoach/mi-cuenta/index.php">Hola <?php echo $_SESSION["coach"]["Nombre"]?></a>
@@ -42,7 +39,7 @@
       </div>  
             
       <div class="btn-group mx-3">
-        <a href="<?php echo $root?>registro/index.php" class="btn btn-outline-info btn-rounded waves-effect" role="button">Registro</a>
+        <a href="<?php echo $root?>registro/index.php" class="btn btn-outline-info btn-rounded waves-effect" role="button">Register</a>
       </div>    
       <?php } ?>
     </ul>
