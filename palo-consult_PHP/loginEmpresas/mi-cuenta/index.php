@@ -5,7 +5,7 @@ $titulo = $_SESSION["empresas"]["RazonSocial"];
 $template_seccion = "../../templates/empresas.php";
 
 
-$sql_usuarios = "select us.id, us.Nombre, us.Apellido, us.EmailContacto, us.[Horas], us.[Comentario1],us.[Comentario2],us.[Comentario3],us.[Comentario4], co.Nombre AS Coach, co.Apellido AS CoachApellido FROM dbo.Usuarios AS us INNER JOIN dbo.Coach AS co ON us.Coach=co.id WHERE idEmpresa = " . $_SESSION["empresas"]["id"] . ";";
+$sql_usuarios = "select us.id, us.Nombre, us.Apellido, us.EmailContacto,us.Foto, us.[Horas], us.[Comentario1],us.[Comentario2],us.[Comentario3],us.[Comentario4], co.Nombre AS Coach, co.Apellido AS CoachApellido FROM dbo.Usuarios AS us INNER JOIN dbo.Coach AS co ON us.Coach=co.id WHERE idEmpresa = " . $_SESSION["empresas"]["id"] . ";";
 $resultado_usuarios = sqlsrv_query( $conn, $sql_usuarios );
 
 

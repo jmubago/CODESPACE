@@ -6,10 +6,11 @@ $resultado_select_empresa = sqlsrv_query( $conn, $sql_select_empresa );
 
 
 <div class="row">
-        <div class="col mt-1 text-center">
-            <h5>Register a new Candidate</h5>
+        <div class="col mt-2 text-center">
+            <h4 style="color: black">Add new candidates</h4>
+            <h5>Take care of your employees, they will take care of you too</h5>
         </div>    
-    </div>
+</div>
 <div class="container my-5">    
     <form id="registro" method="post" action="<?php echo $root?>registroUsuario/registro_OK.php" enctype="multipart/form-data">
       <div class="form-group row">

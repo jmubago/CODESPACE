@@ -1,20 +1,20 @@
 <div class="row">
         <div class="col mt-1 text-center">
-            <h5>Te estás registrando como Coach</h5>
+            <h5>You are login as Coach</h5>
         </div>    
     </div>
 <div class="container my-5">    
     <form id="registro" method="post" action="<?php echo $root?>registroCoach/registro_OK.php">
       <div class="form-group row">
-        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+        <label for="nombre" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Name">
         </div>
       </div>
       <div class="form-group row">
-        <label for="nombre" class="col-sm-2 col-form-label">Apellido</label>
+        <label for="nombre" class="col-sm-2 col-form-label">Surname</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Surname">
         </div>
       </div>  
       <div class="form-group row">
@@ -24,39 +24,39 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
+        <label for="password" class="col-sm-2 col-form-label">Password</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
       </div>
       <div class="form-group row">
-        <label for="repassword" class="col-sm-2 col-form-label">Repite la contraseña</label>
+        <label for="repassword" class="col-sm-2 col-form-label">Repeat password</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Contraseña">
+            <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Password">
         </div>
       </div>
        <div class="form-group row">
-        <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
+        <label for="telefono" class="col-sm-2 col-form-label">Phone number</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+          <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Phone number">
         </div>
       </div> 
       <div class="form-group row">
-        <label for="iban" class="col-sm-2 col-form-label">IBAN</label>
+        <label for="iban" class="col-sm-2 col-form-label">Banck account</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="iban" name="iban" placeholder="IBAN">
+          <input type="text" class="form-control" id="iban" name="iban" placeholder="Banck account">
         </div>
       </div>
       <div class="form-group row">
-        <label for="idiomaSelec" class="col-sm-2 col-form-label">Idioma</label>
+        <label for="idiomaSelec" class="col-sm-2 col-form-label">Language</label>
         <div class="col-sm-10">
           <select name="idiomaSelec">
-            <option value="1">Español</option>
-            <option value="2">Francés</option>
-            <option value="3">Inglés</option>
-            <option value="4">Alemán</option>
-            <option value="5">Holandés</option>
-            <option value="6">Japonés</option>
+            <option value="1">Spanish</option>
+            <option value="2">French</option>
+            <option value="3">English</option>
+            <option value="4">German</option>
+            <option value="5">Dutch</option>
+            <option value="6">Japanese</option>
           </select>
 
         </div>
@@ -66,7 +66,7 @@
       
       <div class="form-group row">
         <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary">Regístrate</button>
+          <button type="submit" class="btn btn-success">Register</button>
         </div>
       </div>
     </form>

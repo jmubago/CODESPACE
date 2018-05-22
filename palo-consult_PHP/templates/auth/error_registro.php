@@ -1,1 +1,1 @@
-Ha habido un error de registro
+An error has ocurred, please try again.

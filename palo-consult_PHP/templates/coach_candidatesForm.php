@@ -32,19 +32,19 @@
             <input type="number" name="hours" class="form-control" placeholder="1, 2, 3, ..."></input>
           </div>
           <div class="form-group">
-            <label for="comentario1">Comment 1</label>
+            <label for="comentario1">The company candidate´s perception</label>
             <textarea name="comentario1" class="form-control" placeholder="Comment 01"></textarea>
           </div>
           <div class="form-group">
-            <label for="comentario2">Comment 2</label>
+            <label for="comentario2">The candidate´s strong point</label>
             <textarea name="comentario2" class="form-control" placeholder="Comment 02"></textarea>
           </div> 
           <div class="form-group">
-            <label for="comentario3">Comment 3</label>
+            <label for="comentario3">The candidate´s strong point</label>
             <textarea name="comentario3" class="form-control" placeholder="Comment 03"></textarea>
           </div>
           <div class="form-group">
-            <label for="comentario4">Comment 4</label>
+            <label for="comentario4">Other comments</label>
             <textarea name="comentario4" class="form-control" placeholder="Comment 04"></textarea>
           </div>
           <button type="submit" class="btn btn-success">Submit</button>

@@ -17,7 +17,7 @@ $variable = $_GET["tipo"];}
           <div class="card-body">
             <h5 class="card-title">Coaches</h5>
             <p class="card-text">If you are a Coach and you want to be part of our amazing team you can register here</p>
-                <a href="?tipo=coach" class="btn btn-success btn-rounded waves-effect" role="button">Coach</a>
+                <a href="?tipo=coach" class="btn btn-primary btn-rounded waves-effect" role="button">Coach</a>
           </div>
         </div>
       </div>
@@ -25,9 +25,9 @@ $variable = $_GET["tipo"];}
         <div class="card">
             <img class="img-fluid" src="../media/registro-empresa.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Para las empresas</h5>
+            <h5 class="card-title">Enterprises</h5>
             <p class="card-text">Are you an enterprise and want to benefit from our Outplacement services? Register here</p>
-            <a href="?tipo=empresas" class="btn btn-success btn-rounded waves-effect" role="button">Enterprise</a>
+            <a href="?tipo=empresas" class="btn btn-primary btn-rounded waves-effect" role="button">Enterprise</a>
           </div>
         </div>
       </div>  
@@ -37,7 +37,7 @@ $variable = $_GET["tipo"];}
 <div class="container my-5"> 
  <?php if(isset($mensaje)){?>
     <div class="alert alert-success" role="alert">
-        <?php echo $mensaje?></p>
+        <?php echo $mensaje?>
     </div> 
     <?php } ?>   
     
