@@ -33,7 +33,8 @@ while( $row = sqlsrv_fetch_array( $resultado, SQLSRV_FETCH_ASSOC))
     if ($usuario){
         
         $_SESSION["empresas"] = $usuario;
-        $template_seccion = "bienvenida.php";
+        header("Location: mi-cuenta/index.php");
+        $template_seccion = "../templates/empresas.php";
     }
     else {
         $error = "Wrong password or email";

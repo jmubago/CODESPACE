@@ -19,9 +19,6 @@ $variable = $_GET["usuarioButton"];}
           <div>
             <a href="?usuarioButton=updateInfo" id="create-form-button" class="verInfo btn btn-outline-success-sidebar btn-rounded waves-effect">Update info</a>
           </div>
-          <div>
-            <a href="?usuarioButton=usuarioReport" id="free-candidate-button" class="verInfo btn btn-outline-success-sidebar btn-rounded waves-effect">Your report</a>
-          </div>
         </div>   
     </div>    
 </div>
