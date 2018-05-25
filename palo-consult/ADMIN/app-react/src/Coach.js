@@ -17,8 +17,8 @@ class Coach extends Component{
                     this.setState({
                         get_coach: result
                     });
-                    console.log("result: ",this.state.get_coach);
-                    console.log(result);
+                    //console.log("result: ",this.state.get_coach);
+                    //console.log(result);
                 },
                 (error)=>{
                     this.setState({
@@ -31,8 +31,8 @@ class Coach extends Component{
     render(){
         //const {get_candidateWithCoach} = this.state;
         var map = this.state.get_coach;
-        console.log("map Coachhh : ",map);
-        console.log("RENDER");
+        //console.log("map Coachhh : ",map);
+        //console.log("RENDER");
         
         return(
             <div className="container">
@@ -46,6 +46,7 @@ class Coach extends Component{
                                 <th>Bank account</th>
                                 <th>Sessions</th>
                                 <th>Candidates</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,6 +58,7 @@ class Coach extends Component{
                                 <td>{Coach.IBAN}</td>
                                 <td>{Coach.TotalSessions}</td>
                                 <td>{Coach.NumberCandidates}</td>
+                                <td><button>Edit</button>|<button>Delete</button></td>
                                 </tr>
                             )}
                         </tbody>

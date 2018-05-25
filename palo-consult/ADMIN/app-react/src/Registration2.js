@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal';
 
-class Registration1 extends Component{
+
+class Registration2 extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -24,16 +24,16 @@ class Registration1 extends Component{
         event.preventDefault();
         
         var data = {
-            RazonSocial: this.companyName.value,
-            CIF: this.vatNumber.value,
-            Actividad: this.activity.value,
-            Pais: this.country.value,
-            Direccion: this.address.value,
-            EmailContacto: this.email.value,
-            Clave: this.password.value,
-            Telefono: this.phoneNumber.value,
-            PersonaContacto: this.contactPerson.value,
-            IBAN: this.bankAccount.value,
+            RazonSocial: this.state.RazonSocial,
+            CIF: this.state.CIF,
+            Actividad: this.state.Actividad,
+            Pais: this.state.Pais,
+            Direccion: this.state.Direccion,
+            EmailContacto: this.state.EmailContacto,
+            Clave: this.state.Clave,
+            Telefono: this.state.Telefono,
+            PersonaContacto: this.state.PersonaContacto,
+            IBAN: this.state.IBAN,
         }
         
         console.log("JSONNNNNNNNNNN: ",JSON.stringify(data));
@@ -53,25 +53,29 @@ class Registration1 extends Component{
         });
     }
 
+    logChange(event) {
+        console.log("eventttttttt: ",event);
+        console.log("event.target.name: ", [event.target.name]);
+        console.log("event.target.value: ", event.target.value);
+        this.setState({[event.target.name]: event.target.value});  
+        //const target = e.target;
+    }
 
     render() {
         return (
             <div className="container register-form">
-                <div>
-                    Registration 01
-                </div>
                 <form onSubmit={this.handleSubmit} method="POST">
                     <div>
                         <label>Company name </label>
-                        <input  className="form-control"  placeholder='Company name' name='companyName' ref={companyName=>this.companyName=companyName}/>
+                        <input onChange={this.logChange} value='' className="form-control" placeholder='Company name' name='RazonSocial'/>
                     </div>
                     <div>
                         <label>VAT Number </label>
-                        <input  className="form-control"  placeholder='VAT Number' name='vatNumber' ref={vatNumber=>this.vatNumber=vatNumber}/>
+                        <input onChange={this.logChange} value={this.state.value} className="form-control"  placeholder='VAT Number' name='CIF'/>
                     </div>
                     <div>
                         <label>Activity </label>
-                        <select className="actividadSelec"  name='activity 'ref={activity=>this.activity=activity}>
+                        <select onChange={this.logChange} className="actividadSelec"  name='Actividad '>
                             <option value="1">Architecture and urbanism</option>
                             <option value="2">Food Industry</option>
                             <option value="3">Automotion industry</option>
@@ -89,7 +93,7 @@ class Registration1 extends Component{
                     </div>
                     <div>
                         <label>Country </label>
-                        <select className="paisSelec"  name='country' ref={country=>this.country=country}>
+                        <select onChange={this.logChange} className="paisSelec"  name='Pais'>
                             <option value="1">Spain</option>
                             <option value="2">France</option>
                             <option value="3">United States</option>
@@ -102,27 +106,27 @@ class Registration1 extends Component{
                     </div>
                     <div>
                         <label>Address </label>
-                        <input  className="form-control"  placeholder='Address' name='address' ref={address=>this.address=address}/>
+                        <input onChange={this.logChange} value={this.state.value} className="form-control"  placeholder='Address' name='Direccion'/>
                     </div>
                     <div>
                         <label>Email </label>
-                        <input  className="form-control"  placeholder='Email' name='email' ref={email=>this.email=email}/>
+                        <input onChange={this.logChange} value={this.state.value} className="form-control"  placeholder='Email' name='EmailContacto'/>
                     </div>
                     <div>
                         <label>Password </label>
-                        <input  className="form-control"  placeholder='Password' name='password' ref={password=>this.password=password}/>
+                        <input onChange={this.logChange} value={this.state.value} className="form-control"  placeholder='Password' name='Clave'/>
                     </div>
                     <div>
                         <label>Phone number </label>
-                        <input  className="form-control"  placeholder='Phone number' name='phoneNumber' ref={phoneNumber=>this.phoneNumber=phoneNumber}/>
+                        <input onChange={this.logChange} value={this.state.value} className="form-control"  placeholder='Phone number' name='Telefono'/>
                     </div>
                     <div>
                         <label>Contact Person </label>
-                        <input  className="form-control"  placeholder='Contact Person' name='contactPerson' ref={contactPerson=>this.contactPerson=contactPerson}/>
+                        <input onChange={this.logChange} value={this.state.value} className="form-control"  placeholder='Contact Person' name='PersonaContacto'/>
                     </div>
                     <div>
                         <label>Bank account </label>
-                        <input  className="form-control"  placeholder='Bank account' name='bankAccount' ref={bankAccount=>this.bankAccount=bankAccount}/>
+                        <input onChange={this.logChange} value={this.state.value} className="form-control"  placeholder='Bank account' name='IBAN'/>
                     </div>
                     <div className="submit-section">
                         <button className="btn btn-uth-submit">Submit</button>
@@ -133,4 +137,4 @@ class Registration1 extends Component{
     }
 }
 
-export default Registration1;
+export default Registration2;

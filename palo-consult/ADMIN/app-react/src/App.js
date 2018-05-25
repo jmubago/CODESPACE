@@ -6,7 +6,10 @@ import CandidatesNoCoach from './candidatesNoCoach';
 import Coach from './Coach';
 import Enterprise from './Enterprises'
 import Registration1 from './Registration1'
-//import Registration2 from './Registration2'
+import Registration2 from './Registration2'
+import Registration1jose from './Registration1.jose'
+
+
 
 class App extends Component {
   render() {
@@ -22,10 +25,14 @@ class App extends Component {
         <CandidatesCoach/>
         <CandidatesNoCoach/>
         <Coach/>
-        <Enterprise/>
-        <Registration1/>
+        {/* <Enterprise/> */}
+        {/* <p></p>
+        <Registration1/> */}
         <p></p>
         {/* <Registration2/> */}
+        <p></p>
+        <p></p>
+        <Registration1jose/>
       </div>
     )
   }

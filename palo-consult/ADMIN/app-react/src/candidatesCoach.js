@@ -17,8 +17,6 @@ class CandidatesCoach extends Component{
                     this.setState({
                         get_candidateWithCoach: result
                     });
-                    console.log("result: ",this.state.get_candidateWithCoach);
-                    console.log(result);
                 },
                 (error)=>{
                     this.setState({
@@ -31,8 +29,6 @@ class CandidatesCoach extends Component{
     render(){
         //const {get_candidateWithCoach} = this.state;
         var map = this.state.get_candidateWithCoach;
-        console.log("map: ",map);
-        console.log("RENDER");
         
         return(
             <div className="container">
