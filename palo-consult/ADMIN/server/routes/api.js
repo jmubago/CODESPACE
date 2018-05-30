@@ -15,8 +15,7 @@ export default () => {
     api.put('/updateEnterprise',controller.updateEnterprise);
     api.put('/updateCoach', controller.updateCoach);
     api.delete('/deleteCoach', controller.deleteCoach);
-    api.delete('/deleteEnterprise', controller.deleteEnterprise);
-
+    api.delete('/deleteEnterprise/:id', controller.deleteEnterprise);
 
     return api
 }

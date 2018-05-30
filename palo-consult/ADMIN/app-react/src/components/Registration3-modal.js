@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal/lib/components/Modal';
 import Enterprise from './Enterprises';
+import EnterpriseMultipleModals from './Enterprises.multiplemodals'
 import './Registration3-modal.css';
 
 class Registration3 extends Component{
@@ -105,7 +106,8 @@ class Registration3 extends Component{
     render() {
         return (
             <div>
-                <Enterprise reloadEnterprise={this.state.get_enterprise}/>
+                {/* <Enterprise reloadEnterprise={this.state.get_enterprise}/> */}
+                <EnterpriseMultipleModals reloadEnterprise={this.state.get_enterprise}/>
                 <button className="button button1 button-bottom" onClick={() => this.openModal()}>Register new enterprise</button>
                 <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="Register Enterprise">
                     <div className="user-modal">
