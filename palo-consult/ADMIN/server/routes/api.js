@@ -12,6 +12,7 @@ export default () => {
     api.get('/get_coach', controller.get_coach);
     api.get('/get_enterprises', controller.get_enterprises);
     api.post('/createEnterprise',controller.createEnterprise);
+    api.post('/createCoach', controller.createCoach);
     api.put('/updateEnterprise',controller.updateEnterprise);
     api.put('/updateCoach', controller.updateCoach);
     api.delete('/deleteCoach', controller.deleteCoach);

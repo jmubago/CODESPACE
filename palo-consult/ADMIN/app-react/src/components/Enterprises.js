@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal/lib/components/Modal';
+import Modal from 'react-responsive-modal';
 import './Enterprises.css'
 
-class Enterprise extends Component{
+class EnterpriseMultipleModals extends Component{
     constructor(props){
         super(props);
         this.state={
             //error=null,
             get_enterprise: [],
-            modalIsOpen: false,
+            openFirstModal: false,
+            openSecondModal: false,
             RazonSocial: '',
             Direccion:'',
             EmailContacto:'',
@@ -17,16 +18,18 @@ class Enterprise extends Component{
             id:0,
             register: false
         };
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        this.onOpenFirstModal = this.onOpenFirstModal.bind(this);
+        this.onOpenSecondModal = this.onOpenSecondModal.bind(this);
+        this.onCloseFirstModal = this.onCloseFirstModal.bind(this);
+        this.onCloseSecondModal = this.onCloseSecondModal.bind(this);
         //this.logChange = this.logChange.bind(this); // We capture the value and change state as user changes the value here.
         this.handleEdit = this.handleEdit.bind(this);
         //this.getDerivedStateFromProps = this.getDerivedStateFromProps.bind(this);
     }
 
-    openModal(Enterprises) {
+    onOpenFirstModal (Enterprises) {
         this.setState({
-            modalIsOpen: true,
+            openFirstModal: true,
             RazonSocial: Enterprises.RazonSocial,
             Direccion: Enterprises.Direccion,
             EmailContacto: Enterprises.EmailContacto,
@@ -36,14 +39,57 @@ class Enterprise extends Component{
         });
     }
 
-    openModal(Enterprises, id){
-
+    onOpenSecondModal (Enterprises){
+        this.setState({
+            openSecondModal: true
+        });
+        var data = {
+            id: Enterprises.id
+        }
+        console.log(JSON.stringify(data));
+        fetch('http://localhost:4000/api/deleteEnterprise/:id', {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }).then(function(response) {
+            if (response.status >= 400) {
+              throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).then(function(data) {
+            // console.log("after delete JSON: ")
+            if(data === "success"){ 
+                this.setState({msg: "User has been deleted."});  
+            }
+        }).catch(function(err) {
+            console.log(err)
+        });
     }
     
-    closeModal() {
-        console.log("close modaaaaaaaal")
+    onCloseFirstModal () {
+        console.log("close modaaaaaaaal 1")
         this.setState({
-            modalIsOpen: false
+            openFirstModal: false
+        });
+        fetch("http://localhost:4000/api/get_enterprises")
+            .then(res => res.json())
+            .then(
+                (result)=>{
+                    this.setState({
+                        get_enterprise: result
+                    });
+                },
+                (error)=>{
+                    this.setState({
+                        error: error
+                });      
+            })
+    }
+
+    onCloseSecondModal (){
+        console.log("close modaaaaaaaal 2")
+        this.setState({
+            openSecondModal: false
         });
         fetch("http://localhost:4000/api/get_enterprises")
             .then(res => res.json())
@@ -86,30 +132,6 @@ class Enterprise extends Component{
         })
     }
 
-    deleteEnterprise(Enterprises){
-        var data = {
-            id: Enterprises.id
-        }
-        console.log(JSON.stringify(data));
-        fetch('http://localhost:4000/api/deleteEnterprise/:id', {
-            method: 'DELETE',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        }).then(function(response) {
-            if (response.status >= 400) {
-              throw new Error("Bad response from server");
-            }
-            return response.json();
-        }).then(function(data) {
-            // console.log("after delete JSON: ")
-            if(data === "success"){ 
-                this.setState({msg: "User has been deleted."});  
-            }
-        }).catch(function(err) {
-            console.log(err)
-        });
-    }
-
     componentWillReceiveProps(nextProps) {
         this.setState({
             get_enterprise: nextProps.reloadEnterprise
@@ -135,6 +157,7 @@ class Enterprise extends Component{
 
     render(){
         //console.log ("new Prooooops: ", this.props.reloadEnterprise);
+        const { openFirstModal, openSecondModal } = this.state;
         return(
             <div className="limiter">
                 <div className="container-table100">
@@ -168,10 +191,10 @@ class Enterprise extends Component{
                                             <td className="cell100 column5">{Enterprises.IBAN}</td>
                                             <td className="cell100 column6">{Enterprises.TotalSessions}</td>
                                             <td className="cell100 column7">{Enterprises.NumberCandidates}</td>
-                                            <td className="cell100 column8"><button button className="button-small button1" onClick={() => this.openModal(Enterprises)}>Edit</button>  |  <button button className="button-small button1" onClick={() => this.deleteEnterprise(Enterprises)}>Delete</button></td>
+                                            <td className="cell100 column8"><button button className="button-small button1" onClick={() => this.onOpenFirstModal(Enterprises)}>Edit</button>  |  <button button className="button-small button1" onClick={() => this.onOpenSecondModal(Enterprises)}>Delete</button></td>
                                             </tr>
                                         )}
-                                        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="Enterprise update">
+                                        <Modal open={openFirstModal} onClose={this.onCloseFirstModal} contentLabel="Enterprise update">
                                             <form onSubmit={this.handleEdit} method="POST">
                                                 <div>
                                                     <label>Company name </label>
@@ -198,7 +221,7 @@ class Enterprise extends Component{
                                                 </div>
                                             </form>
                                         </Modal>
-                                        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="Enterprise update">
+                                        <Modal open={openSecondModal} onClose={this.onCloseSecondModal} contentLabel="Enterprise update">
                                             <div>
                                                 You have successfully deleted this enterprise
                                             </div>
@@ -213,4 +236,4 @@ class Enterprise extends Component{
         )
     }
 }
-export default Enterprise;
+export default EnterpriseMultipleModals;

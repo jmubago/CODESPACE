@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal/lib/components/Modal';
+import Modal from 'react-responsive-modal';
 import './Coach.css'
 
 class Coach extends Component{
@@ -10,15 +10,17 @@ class Coach extends Component{
             get_coach: [],
             modalIsOpen: false,
         };
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        this.onOpenFirstModal = this.onOpenFirstModal.bind(this);
+        this.onOpenSecondModal = this.onOpenSecondModal.bind(this);
+        this.onCloseFirstModal = this.onCloseFirstModal.bind(this);
+        this.onCloseSecondModal = this.onCloseSecondModal.bind(this);
         //this.logChange = this.logChange.bind(this); // We capture the value and change state as user changes the value here.
         this.handleEdit = this.handleEdit.bind(this);
     }
 
-    openModal(Coach){
+    onOpenFirstModal(Coach){
         this.setState({
-            modalIsOpen: true,
+            openFirstModal: true,
             Nombre: Coach.Nombre,
             Apellido: Coach.Apellido,
             Email: Coach.EmailContacto,
@@ -28,10 +30,72 @@ class Coach extends Component{
         });
     }
 
-    closeModal(){
+    onOpenSecondModal(Coach){
         this.setState({
-            modalIsOpen: false
+            openSecondModal: true,
         });
+        var data = {
+            id: Coach.id
+        }
+        console.log(JSON.stringify(data));
+        fetch('http://localhost:4000/api/deleteCoach', {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }).then(function(response) {
+            if (response.status >= 400) {
+              throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).then(function(data) {
+            if(data === "success"){
+               this.setState({msg: "User has been deleted."});  
+            }
+        }).catch(function(err) {
+            console.log(err)
+        });
+    }
+
+    onCloseFirstModal(){
+        console.log("close modaaaaaaaal 1")
+        this.setState({
+            openFirstModal: false
+        });
+        fetch("http://localhost:4000/api/get_coach")
+            .then(res => res.json())
+            .then(
+                (result)=>{
+                    this.setState({
+                        get_coach: result
+                    });
+                },
+                (error)=>{
+                    this.setState({
+                        error: error
+                });
+                  
+            })
+    }
+
+    onCloseSecondModal(){
+        console.log("close modaaaaaaaal 2")
+        this.setState({
+            openSecondModal: false
+        });
+        fetch("http://localhost:4000/api/get_coach")
+            .then(res => res.json())
+            .then(
+                (result)=>{
+                    this.setState({
+                        get_coach: result
+                    });
+                },
+                (error)=>{
+                    this.setState({
+                        error: error
+                });
+                  
+            })
     }
 
     handleEdit(event){
@@ -60,27 +124,11 @@ class Coach extends Component{
         })
     }
 
-    deleteCoach(Coach){
-        var data = {
-            id: Coach.id
-        }
-        console.log(JSON.stringify(data));
-        fetch('http://localhost:4000/api/deleteCoach', {
-            method: 'DELETE',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        }).then(function(response) {
-            if (response.status >= 400) {
-              throw new Error("Bad response from server");
-            }
-            return response.json();
-        }).then(function(data) {
-            if(data === "success"){
-               this.setState({msg: "User has been deleted."});  
-            }
-        }).catch(function(err) {
-            console.log(err)
-        });
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            get_coach: nextProps.reloadCoach
+        })
+        console.log("componentWillReceivePropsssssssss", this.state.get_coach);
     }
 
     componentDidMount() {
@@ -91,8 +139,6 @@ class Coach extends Component{
                     this.setState({
                         get_coach: result
                     });
-                    //console.log("result: ",this.state.get_coach);
-                    //console.log(result);
                 },
                 (error)=>{
                     this.setState({
@@ -103,11 +149,7 @@ class Coach extends Component{
     }
 
     render(){
-        //const {get_candidateWithCoach} = this.state;
-        var map = this.state.get_coach;
-        //console.log("map Coachhh : ",map);
-        //console.log("RENDER");
-        
+        const { openFirstModal, openSecondModal } = this.state;
         return(
             <div className="container-table200">
                 <div className="wrap-table200">
@@ -138,10 +180,10 @@ class Coach extends Component{
                                         <td className="cell100 column4-1">{Coach.IBAN}</td>
                                         <td className="cell100 column5-1">{Coach.TotalSessions}</td>
                                         <td className="cell100 column6-1">{Coach.NumberCandidates}</td>
-                                        <td className="cell100 column7-1"><button className="button-small button1"  onClick={() => this.openModal(Coach)}>Edit</button> | <button className="button-small button1" onClick={() => this.deleteCoach(Coach)}>Delete</button></td>
+                                        <td className="cell100 column7-1"><button className="button-small button1"  onClick={() => this.onOpenFirstModal(Coach)}>Edit</button> | <button className="button-small button1" onClick={() => this.onOpenSecondModal(Coach)}>Delete</button></td>
                                         </tr>
                                     )}
-                                    <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="Enterprise update">
+                                    <Modal  open={openFirstModal} onClose={this.onCloseFirstModal} contentLabel="Enterprise update">
                                         <form onSubmit={this.handleEdit} method="POST">
                                             <div>
                                                 <label>Coach name </label>
@@ -167,6 +209,11 @@ class Coach extends Component{
                                                 <button className="btn btn-uth-submit">Submit</button>
                                             </div>
                                         </form>
+                                    </Modal>
+                                    <Modal open={openSecondModal} onClose={this.onCloseSecondModal} contentLabel="Enterprise update">
+                                            <div>
+                                                You have successfully deleted this coach
+                                            </div>
                                     </Modal>
                                 </tbody>
                             </table>
