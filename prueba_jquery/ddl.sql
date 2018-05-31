@@ -1,9 +1,0 @@
-CREATE DATABASE todolist;
-
-USE todolist;
-
-CREATE TABLE `todos` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`todo` varchar(500) NOT NULL,
-	PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
