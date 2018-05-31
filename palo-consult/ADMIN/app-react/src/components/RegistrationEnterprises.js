@@ -6,6 +6,19 @@ import './RegistrationEnterprises.css';
 class RegistrationEnterprises extends Component{
     constructor(props){
         super(props)
+        fetch("http://localhost:4000/api/get_enterprises")
+            .then(res => res.json())
+            .then(
+                (result)=>{
+                    this.setState({
+                        get_enterprise: result
+                    });
+                },
+                (error)=>{
+                    this.setState({
+                        error: error
+                });    
+            })
         this.state={
             RazonSocial: '',
             CIF: '',
@@ -22,10 +35,27 @@ class RegistrationEnterprises extends Component{
             register: false,
             get_enterprise: [],
         }
-        console.log("this stateeeeeeeeeeeeeeeeeeeeeeee: ",this.state);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    setInitialState(){
+        console.log("set Initial State", this.state);
+        fetch("http://localhost:4000/api/get_enterprises")
+            .then(res => res.json())
+            .then(
+                (result)=>{
+                    this.setState({
+                        get_enterprise: result
+                    });
+                },
+                (error)=>{
+                    this.setState({
+                        error: error
+                });
+                  
+            })
     }
 
     openModal(){
@@ -104,7 +134,19 @@ class RegistrationEnterprises extends Component{
                 {/* <Enterprise reloadEnterprise={this.state.get_enterprise}/> */}
                 <Enterprise reloadEnterprise={this.state.get_enterprise}/>
                 <button className="button button1 button-enterprises" onClick={() => this.openModal()}>Register new enterprise</button>
-                <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="Register Enterprise">
+                <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel="Register Enterprise" className="register-modal" style={{
+                        overlay: {
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: 'rgba(255, 255, 255, 0.75)'
+                        },
+                        content: {
+                        
+                        }
+                    }}>
                     <div className="user-modal">
                         <div className="user-modal-container">
                             <div id="signup">

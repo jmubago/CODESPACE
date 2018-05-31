@@ -183,7 +183,7 @@
   }
 
   .column1:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .column2 {
@@ -193,7 +193,7 @@
   }
   
   .column2:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .column3 {
@@ -203,7 +203,7 @@
   }
   
   .column3:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .column4 {
@@ -213,7 +213,7 @@
   }
   
   .column4:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .column5 {
@@ -223,7 +223,7 @@
   }
 
   .column5:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .column6 {
@@ -233,7 +233,7 @@
   }
 
   .column6:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .column7 {
@@ -243,7 +243,7 @@
   }
 
   .column7:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .column8 {
@@ -254,7 +254,7 @@
   }
   
   .column8:hover {
-    background-color: #fa425156;
+    background-color: #439a4659;
   }
   
   .table100-head th {
@@ -301,7 +301,7 @@
   .table100.ver2 th {
     font-family: Lato-Bold;
     font-size: 16px;
-    color: #fa4251;
+    color: #439a46;
     line-height: 1.4;
   
     background-color: transparent;
@@ -351,7 +351,7 @@
   }
   
   .button-small {
-    background-color: #fa4251; 
+    background-color: #439a46; 
     border: none;
     color: white;
     padding: 8px 12px;

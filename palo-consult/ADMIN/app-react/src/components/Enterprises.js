@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Modal from 'react-responsive-modal';
 import './Enterprises.css'
 
-class EnterpriseMultipleModals extends Component{
+class Enterprises extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -10,6 +10,7 @@ class EnterpriseMultipleModals extends Component{
             get_enterprise: [],
             openFirstModal: false,
             openSecondModal: false,
+            openThirdModal: false,
             RazonSocial: '',
             Direccion:'',
             EmailContacto:'',
@@ -20,11 +21,11 @@ class EnterpriseMultipleModals extends Component{
         };
         this.onOpenFirstModal = this.onOpenFirstModal.bind(this);
         this.onOpenSecondModal = this.onOpenSecondModal.bind(this);
-        this.onCloseFirstModal = this.onCloseFirstModal.bind(this);
+        this.onOpenThirdModal = this.onOpenThirdModal.bind(this);
+        // this.onCloseFirstModal = this.onCloseFirstModal.bind(this);
         this.onCloseSecondModal = this.onCloseSecondModal.bind(this);
-        //this.logChange = this.logChange.bind(this); // We capture the value and change state as user changes the value here.
+        this.onCloseThirdModal = this.onCloseThirdModal.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
-        //this.getDerivedStateFromProps = this.getDerivedStateFromProps.bind(this);
     }
 
     onOpenFirstModal (Enterprises) {
@@ -65,26 +66,22 @@ class EnterpriseMultipleModals extends Component{
             console.log(err)
         });
     }
-    
-    onCloseFirstModal () {
-        console.log("close modaaaaaaaal 1")
+
+    onOpenThirdModal(Enterprises){
         this.setState({
-            openFirstModal: false
+            openThirdModal: true,
+            openFirstModal: false,
         });
-        fetch("http://localhost:4000/api/get_enterprises")
-            .then(res => res.json())
-            .then(
-                (result)=>{
-                    this.setState({
-                        get_enterprise: result
-                    });
-                },
-                (error)=>{
-                    this.setState({
-                        error: error
-                });      
-            })
+        console.log ("open third modal");
     }
+    
+    // onCloseFirstModal () {
+    //     console.log("close modaaaaaaaal 1")
+    //     this.setState({
+    //         openFirstModal: false
+    //     });
+        
+    // }
 
     onCloseSecondModal (){
         console.log("close modaaaaaaaal 2")
@@ -105,6 +102,27 @@ class EnterpriseMultipleModals extends Component{
                 });      
             })
     }
+
+    onCloseThirdModal(){
+        console.log("close first and third modal")
+        this.setState({
+            openThirdModal: false,
+        });
+        fetch("http://localhost:4000/api/get_enterprises")
+            .then(res => res.json())
+            .then(
+                (result)=>{
+                    this.setState({
+                        get_enterprise: result
+                    });
+                },
+                (error)=>{
+                    this.setState({
+                        error: error
+                });      
+            })
+
+    }    
 
     handleEdit(event){
         event.preventDefault()
@@ -157,7 +175,7 @@ class EnterpriseMultipleModals extends Component{
 
     render(){
         //console.log ("new Prooooops: ", this.props.reloadEnterprise);
-        const { openFirstModal, openSecondModal } = this.state;
+        const { openFirstModal, openSecondModal, openThirdModal } = this.state;
         return(
             <div className="limiter">
                 <div className="container-table100">
@@ -217,7 +235,7 @@ class EnterpriseMultipleModals extends Component{
                                                     <input id="signup-bankAccount" className="form-control"  placeholder='Bank account' name='bankAccount' ref={bankAccount=>this.bankAccount=bankAccount}/>
                                                 </div>
                                                 <div className="submit-section">
-                                                    <button className="btn btn-uth-submit">Submit</button>
+                                                    <button className="btn btn-uth-submit" onClick={() => this.onOpenThirdModal(Enterprises)}>Submit</button>
                                                 </div>
                                             </form>
                                         </Modal>
@@ -226,6 +244,11 @@ class EnterpriseMultipleModals extends Component{
                                                 You have successfully deleted this enterprise
                                             </div>
                                         </Modal>
+                                        <Modal open={openThirdModal} onClose={this.onCloseThirdModal} contentLabel="Enterprise update">
+                                            <div>
+                                                You have successfully updated this enterprise
+                                            </div>
+                                    </Modal>
                                     </tbody>
                                 </table>
                             </div>
@@ -236,4 +259,4 @@ class EnterpriseMultipleModals extends Component{
         )
     }
 }
-export default EnterpriseMultipleModals;
+export default Enterprises;

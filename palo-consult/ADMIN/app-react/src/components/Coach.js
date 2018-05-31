@@ -8,13 +8,16 @@ class Coach extends Component{
         this.state={
             //error=null,
             get_coach: [],
-            modalIsOpen: false,
+            openFirstModal: false,
+            openSecondModal:false,
+            openThirdModal:false
         };
         this.onOpenFirstModal = this.onOpenFirstModal.bind(this);
         this.onOpenSecondModal = this.onOpenSecondModal.bind(this);
-        this.onCloseFirstModal = this.onCloseFirstModal.bind(this);
+        this.onOpenThirdModal = this.onOpenThirdModal.bind(this);
+        // this.onCloseFirstModal = this.onCloseFirstModal.bind(this);
         this.onCloseSecondModal = this.onCloseSecondModal.bind(this);
-        //this.logChange = this.logChange.bind(this); // We capture the value and change state as user changes the value here.
+        this.onCloseThirdModal = this.onCloseThirdModal.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
     }
 
@@ -28,6 +31,7 @@ class Coach extends Component{
             Iban: Coach.IBAN,
             id: Coach.id
         });
+        console.log ("open first modal");
     }
 
     onOpenSecondModal(Coach){
@@ -56,10 +60,25 @@ class Coach extends Component{
         });
     }
 
-    onCloseFirstModal(){
-        console.log("close modaaaaaaaal 1")
+    onOpenThirdModal(Coach){
         this.setState({
-            openFirstModal: false
+            openThirdModal: true,
+            openFirstModal: false,
+        });
+        console.log ("open third modal");
+    }
+
+    // onCloseFirstModal(){
+    //     console.log ("close first modal");
+    //     this.setState({
+    //         openFirstModal: false,
+    //     });
+    // }
+
+    onCloseSecondModal(){
+        console.log("close second modal")
+        this.setState({
+            openSecondModal: false
         });
         fetch("http://localhost:4000/api/get_coach")
             .then(res => res.json())
@@ -77,10 +96,10 @@ class Coach extends Component{
             })
     }
 
-    onCloseSecondModal(){
-        console.log("close modaaaaaaaal 2")
+    onCloseThirdModal(){
+        console.log("close first and third modal")
         this.setState({
-            openSecondModal: false
+            openThirdModal: false,
         });
         fetch("http://localhost:4000/api/get_coach")
             .then(res => res.json())
@@ -149,7 +168,7 @@ class Coach extends Component{
     }
 
     render(){
-        const { openFirstModal, openSecondModal } = this.state;
+        const { openFirstModal, openSecondModal, openThirdModal } = this.state;
         return(
             <div className="container-table200">
                 <div className="wrap-table200">
@@ -206,13 +225,18 @@ class Coach extends Component{
                                                 <input  className="form-control"  placeholder='VAT Number' name='vatNumber' ref={bankAccount=>this.bankAccount=bankAccount}/>
                                             </div>
                                             <div className="submit-section">
-                                                <button className="btn btn-uth-submit">Submit</button>
+                                                <button className="btn btn-uth-submit" onClick={() => this.onOpenThirdModal(Coach)}>Submit</button>
                                             </div>
                                         </form>
                                     </Modal>
                                     <Modal open={openSecondModal} onClose={this.onCloseSecondModal} contentLabel="Enterprise update">
                                             <div>
                                                 You have successfully deleted this coach
+                                            </div>
+                                    </Modal>
+                                    <Modal open={openThirdModal} onClose={this.onCloseThirdModal} contentLabel="Enterprise update">
+                                            <div>
+                                                You have successfully updated this coach
                                             </div>
                                     </Modal>
                                 </tbody>

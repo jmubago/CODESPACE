@@ -1,5 +1,5 @@
 .button {
-  background-color: #fa4251; 
+  background-color: #439a46; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -17,4 +17,9 @@
   margin-top: 20px;
   margin-bottom: 50px;
   margin-left: 830px;
+}
+
+.register-modal{
+  position: relative;
+  background-color: blue;
 }

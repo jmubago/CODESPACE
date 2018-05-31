@@ -6,6 +6,19 @@ import './RegistrationCoach.css';
 class RegistrationCoach extends Component{
     constructor(props){
         super(props)
+        fetch("http://localhost:4000/api/get_enterprises")
+            .then(res => res.json())
+            .then(
+                (result)=>{
+                    this.setState({
+                        get_enterprise: result
+                    });
+                },
+                (error)=>{
+                    this.setState({
+                        error: error
+                });    
+            })
         this.state={
             Nombre: '',
             Apellido: '',
@@ -104,11 +117,11 @@ class RegistrationCoach extends Component{
                                 <form onSubmit={this.handleSubmit} method="POST" className="form">
                                     <p className="fieldset">
                                         <label>Name </label>
-                                        <input id="signup-companyName" className="full-width has-padding has-border" placeholder='Company name' name='nameCoach' ref={nameCoach=>this.nameCoach=nameCoach}/>
+                                        <input id="signup-companyName" className="full-width has-padding has-border" placeholder='Coach name' name='nameCoach' ref={nameCoach=>this.nameCoach=nameCoach}/>
                                     </p>
                                     <p className="fieldset">
                                         <label>Last name </label>
-                                        <input id="signup-vatNumber" className="full-width has-padding has-border"  placeholder='VAT Number' name='lastName' ref={lastName=>this.lastName=lastName}/>
+                                        <input id="signup-vatNumber" className="full-width has-padding has-border"  placeholder='Coach last name' name='lastName' ref={lastName=>this.lastName=lastName}/>
                                         </p>
                                     <p className="fieldset">
                                         <label>Language </label>
