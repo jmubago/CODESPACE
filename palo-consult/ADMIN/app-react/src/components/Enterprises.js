@@ -212,30 +212,30 @@ class Enterprises extends Component{
                                             <td className="cell100 column8"><button button className="button-small button1" onClick={() => this.onOpenFirstModal(Enterprises)}>Edit</button>  |  <button button className="button-small button1" onClick={() => this.onOpenSecondModal(Enterprises)}>Delete</button></td>
                                             </tr>
                                         )}
-                                        <Modal open={openFirstModal} onClose={this.onCloseFirstModal} contentLabel="Enterprise update">
+                                        <Modal open={openFirstModal} onClose={this.onCloseFirstModal} contentLabel="Enterprise update" className="update-modal">
                                             <form onSubmit={this.handleEdit} method="POST">
-                                                <div>
+                                                <div className="fieldset">
                                                     <label>Company name </label>
-                                                    <input id="signup-companyName" className="form-control"  placeholder='Company name' name='companyName' ref={companyName=>this.companyName=companyName}/>
+                                                    <input id="signup-companyName" className="input-register"  placeholder='Company name' name='companyName' ref={companyName=>this.companyName=companyName}/>
                                                 </div>
-                                                <div>
+                                                <div className="fieldset">
                                                     <label>Address </label>
-                                                    <input id="signup-address" className="form-control"  placeholder='Address' name='address' ref={address=>this.address=address}/>
+                                                    <input id="signup-address" className="input-register"  placeholder='Address' name='address' ref={address=>this.address=address}/>
                                                 </div>
-                                                <div>
+                                                <div className="fieldset">
                                                     <label>Email </label>
-                                                    <input id="signup-email" className="form-control" type="email"  placeholder='Email' name='email' ref={email=>this.email=email}/>
+                                                    <input id="signup-email" className="input-register" type="email"  placeholder='Email' name='email' ref={email=>this.email=email}/>
                                                 </div>
-                                                <div>
+                                                <div className="fieldset">
                                                     <label>Phone number </label>
-                                                    <input id="signup-phoneNumber" className="form-control"  placeholder='Phone number' name='phoneNumber' ref={phoneNumber=>this.phoneNumber=phoneNumber}/>
+                                                    <input id="signup-phoneNumber" className="input-register"  placeholder='Phone number' name='phoneNumber' ref={phoneNumber=>this.phoneNumber=phoneNumber}/>
                                                 </div>
-                                                <div>
+                                                <div className="fieldset">
                                                     <label>Bank account </label>
-                                                    <input id="signup-bankAccount" className="form-control"  placeholder='Bank account' name='bankAccount' ref={bankAccount=>this.bankAccount=bankAccount}/>
+                                                    <input id="signup-bankAccount" className="input-register"  placeholder='Bank account' name='bankAccount' ref={bankAccount=>this.bankAccount=bankAccount}/>
                                                 </div>
                                                 <div className="submit-section">
-                                                    <button className="btn btn-uth-submit" onClick={() => this.onOpenThirdModal(Enterprises)}>Submit</button>
+                                                    <button onClick={() => this.onOpenThirdModal(Enterprises)} className="button-small button1">Submit</button>
                                                 </div>
                                             </form>
                                         </Modal>
