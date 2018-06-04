@@ -28,10 +28,11 @@
 
 .Header p{
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    font-size: 0.75rem;
+    font-size: 2rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color: #867979;
+    float: right;
 }
 
 
