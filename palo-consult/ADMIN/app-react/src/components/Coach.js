@@ -202,30 +202,30 @@ class Coach extends Component{
                                         <td className="cell100 column7-1"><button className="button-small button1"  onClick={() => this.onOpenFirstModal(Coach)}>Edit</button> | <button className="button-small button1" onClick={() => this.onOpenSecondModal(Coach)}>Delete</button></td>
                                         </tr>
                                     )}
-                                    <Modal  open={openFirstModal} onClose={this.onCloseFirstModal} contentLabel="Enterprise update">
+                                    <Modal  open={openFirstModal} onClose={this.onCloseFirstModal} contentLabel="Enterprise update" className="update-modal">
                                         <form onSubmit={this.handleEdit} method="POST">
-                                            <div>
+                                            <div className="fieldset">
                                                 <label>Coach name </label>
-                                                <input  className="form-control"  placeholder='Company name' name='companyName' ref={coachName=>this.coachName=coachName}/>
+                                                <input  className="input-register"  placeholder='Company name' name='companyName' ref={coachName=>this.coachName=coachName}/>
                                             </div>
-                                            <div>
+                                            <div className="fieldset">
                                                 <label>Coach lastname  </label>
-                                                <input  className="form-control"  placeholder='VAT Number' name='vatNumber' ref={coachLastname=>this.coachLastname=coachLastname}/>
+                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={coachLastname=>this.coachLastname=coachLastname}/>
                                             </div>
-                                            <div>
+                                            <div className="fieldset">
                                                 <label>Email </label>
-                                                <input  className="form-control"  placeholder='VAT Number' name='vatNumber' ref={email=>this.email=email}/>
+                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={email=>this.email=email}/>
                                             </div>
-                                            <div>
+                                            <div className="fieldset">
                                                 <label>Phone number </label>
-                                                <input  className="form-control"  placeholder='VAT Number' name='vatNumber' ref={phoneNumber=>this.phoneNumber=phoneNumber}/>
+                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={phoneNumber=>this.phoneNumber=phoneNumber}/>
                                             </div>
-                                            <div>
+                                            <div className="fieldset">
                                                 <label>Bank account </label>
-                                                <input  className="form-control"  placeholder='VAT Number' name='vatNumber' ref={bankAccount=>this.bankAccount=bankAccount}/>
+                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={bankAccount=>this.bankAccount=bankAccount}/>
                                             </div>
                                             <div className="submit-section">
-                                                <button className="btn btn-uth-submit" onClick={() => this.onOpenThirdModal(Coach)}>Submit</button>
+                                                <button className="button-small button1" onClick={() => this.onOpenThirdModal(Coach)}>Submit</button>
                                             </div>
                                         </form>
                                     </Modal>
