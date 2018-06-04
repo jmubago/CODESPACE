@@ -12,7 +12,7 @@ require 'libs/funciones.php';
 /** CONECTAR A BASE DE DATOS */
 
 $serverName = "localhost"; //serverName\instanceName
-$connectionInfo = array( "Database"=>"PaloConsult01", "UID"=>"joseubago", "PWD"=>"1234");
+$connectionInfo = array( "Database"=>"PaloConsult01", "UID"=>"joseportatil", "PWD"=>"1234");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 /* 

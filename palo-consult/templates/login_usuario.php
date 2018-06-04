@@ -31,8 +31,8 @@
                password: "required"
             },
             messages: {
-                email: "Debes introducir un email válido",
-                password: "Debes introducir una contraseña válida"
+                email: "Please, enter a valid email",
+                password: "Please, enter a valid password"
             }
         })
     })

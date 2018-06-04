@@ -3,7 +3,7 @@
 session_start();
 require '../startApp.php';
 $titulo = "Home";
-$mensaje = "Se ha cerrado tu sesión de Usuario correctamente";
+$mensaje = "You have successfully closed your Candidate´s session";
 session_unset();
 session_destroy();
 $template_seccion = "../templates/login.php";

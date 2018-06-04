@@ -34,7 +34,7 @@ $message = "Hello " . $nombre . " " . $apellido . " you have just just been adde
             . "For login in please use the following information: <br><br>" 
             . "Email address: " . $email . "<br>"
             . "Password: " . $password . "<br><br>"
-            . "Please, go to <a href=\"http://localhost/palo-consult_PHP/login/index.php\">this login</a>, enter into your account and change you personal data and login information. <br>"
+            . "Please, go to <a href=\"http://localhost/palo-consult/login/index.php\">this login</a>, enter into your account and change you personal data and login information. <br>"
             . "Kind regards";
 
 $subject = $nombre . " " . $apellido . " you have been added to Palo Consult";

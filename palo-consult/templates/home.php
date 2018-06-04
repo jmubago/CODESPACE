@@ -43,7 +43,7 @@
         <div class="col-3 mt-5 offset-1">
             <h5 style="color: black">We make a complete internal analysis of your enterprise in Glassdoor and we compare it with your competition.</h5>
             <h5 style="color: black">We offer the best solutions so you can organically improve and maintain in the long run your results.</h5>
-            <a class="btn btn-primary mt-4" href="<?php echo $root?>registro/index.php" role="button">Register</a>
+            <a class="btn btn-primary mt-4" href="<?php echo $root?>login/index.php" role="button">Login</a>
         </div>
     </div>
 </div>

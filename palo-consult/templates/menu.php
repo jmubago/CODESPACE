@@ -38,9 +38,9 @@
         <a href="<?php echo $root?>login/index.php" class="btn btn-outline-primary btn-rounded waves-effect" role="button">Login</a>
       </div>  
             
-      <div class="btn-group mx-3">
-        <a href="<?php echo $root?>registro/index.php" class="btn btn-outline-info btn-rounded waves-effect" role="button">Register</a>
-      </div>    
+      <!--<div class="btn-group mx-3">
+        <a href="<?php// echo $root?>registro/index.php" class="btn btn-outline-info btn-rounded waves-effect" role="button">Register</a>
+      </div>  -->  
       <?php } ?>
     </ul>
       
