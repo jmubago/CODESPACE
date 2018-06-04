@@ -6,19 +6,6 @@ import './RegistrationEnterprises.css';
 class RegistrationEnterprises extends Component{
     constructor(props){
         super(props)
-        fetch("http://localhost:4000/api/get_enterprises")
-            .then(res => res.json())
-            .then(
-                (result)=>{
-                    this.setState({
-                        get_enterprise: result
-                    });
-                },
-                (error)=>{
-                    this.setState({
-                        error: error
-                });    
-            })
         this.state={
             RazonSocial: '',
             CIF: '',
@@ -40,22 +27,20 @@ class RegistrationEnterprises extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    setInitialState(){
-        console.log("set Initial State", this.state);
+    componentDidMount(){
         fetch("http://localhost:4000/api/get_enterprises")
-            .then(res => res.json())
-            .then(
-                (result)=>{
-                    this.setState({
-                        get_enterprise: result
-                    });
-                },
-                (error)=>{
-                    this.setState({
-                        error: error
+        .then(res => res.json())
+        .then(
+            (result)=>{
+                this.setState({
+                    get_enterprise: result
                 });
-                  
-            })
+            },
+            (error)=>{
+                this.setState({
+                    error: error
+            });    
+        })
     }
 
     openModal(){

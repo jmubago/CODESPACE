@@ -6,19 +6,7 @@ import './RegistrationCoach.css';
 class RegistrationCoach extends Component{
     constructor(props){
         super(props)
-        fetch("http://localhost:4000/api/get_enterprises")
-            .then(res => res.json())
-            .then(
-                (result)=>{
-                    this.setState({
-                        get_enterprise: result
-                    });
-                },
-                (error)=>{
-                    this.setState({
-                        error: error
-                });    
-            })
+        
         this.state={
             Nombre: '',
             Apellido: '',
@@ -36,6 +24,22 @@ class RegistrationCoach extends Component{
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount(){
+        fetch("http://localhost:4000/api/get_coach")
+        .then(res => res.json())
+        .then(
+            (result)=>{
+                this.setState({
+                    get_coach: result
+                });
+            },
+            (error)=>{
+                this.setState({
+                    error: error
+            });    
+        })
     }
 
     openModal(){
