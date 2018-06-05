@@ -12,7 +12,6 @@ $variable = $_GET["coachButton"];}
         <h5><?php echo $_SESSION["coach"]["Nombre"] . " " . $_SESSION["coach"]["Apellido"] ?></h5>
       </div>
         <div class="sidebarButton">
-          
           <div>
             <a href="?coachButton=yourCandidate" id="your-candidate-button" class="verInfo btn btn-outline-success-sidebar btn-rounded waves-effect">Your candidate</a>
           </div>
@@ -25,8 +24,6 @@ $variable = $_GET["coachButton"];}
         </div>   
     </div>    
 </div>
-
-
 <div id="innerMain">
     <?php if (isset($_GET["coachButton"])) {
         include ('coach_' . $variable . '.php');

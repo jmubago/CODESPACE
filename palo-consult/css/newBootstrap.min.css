@@ -5846,7 +5846,22 @@ input[type="checkbox"]:disabled:checked:after, .checkbox input[type="checkbox"]:
 .green-background-home{
     background-color: #88C461; 
     height: 200px; 
-    opacity: 0.8
+    opacity: 0.8;
+    margin-top: -100px;
+}
+.green-background-entry{
+    background-color: #88C461; 
+    height: 140px; 
+    opacity: 0.8;
+    margin-top: -100px;
+    margin-left: 70px;
+}
+.green-background-enterprise{
+    background-color: #88C461; 
+    height: 160px; 
+    opacity: 0.8;
+    margin-top: -100px;
+    margin-left: 70px;
 }
 .green-background-text h4, .green-background-text h5{
     color: #FFFFFF;
