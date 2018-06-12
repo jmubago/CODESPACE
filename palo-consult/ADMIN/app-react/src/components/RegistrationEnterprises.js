@@ -75,7 +75,7 @@ class RegistrationEnterprises extends Component{
             IBAN: this.bankAccount.value,
         }; 
         
-        console.log("JSONNNNNNNNNNN: ",JSON.stringify(data));
+        //console.log("JSONNNNNNNNNNN: ",JSON.stringify(data));
         fetch("http://localhost:4000/api/createEnterprise", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},

@@ -40,7 +40,7 @@
         <div class="col-3 mt-3 offset-2">
             <img src="media/graficas.jpg" class="img-fluid" alt="Responsive image">
         </div>
-        <div class="col-3 mt-5 offset-1">
+        <div class="col-3 offset-1">
             <h5 style="color: black">We make a complete internal analysis of your enterprise in Glassdoor and we compare it with your competition.</h5>
             <h5 style="color: black">We offer the best solutions so you can organically improve and maintain in the long run your results.</h5>
             <a class="btn btn-primary mt-4" href="<?php echo $root?>login/index.php" role="button">Login</a>
@@ -55,7 +55,7 @@
     </div>
     <div class="row">
         
-        <div class="col-3 mt-5 offset-2">
+        <div class="col-3 offset-2">
             <h5 style="color: black">The best way to look after your employees is taking care of them even when they do not work for you anymore.</h5>
             <h5 style="color: black">The outplacement services are the perfect solution for employees transition of being employed to be unemployed</h5>
             <a class="btn btn-primary mt-4" href="<?php echo $root?>login/index.php" role="button">Login</a>

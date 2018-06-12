@@ -31,7 +31,7 @@ class Coach extends Component{
             Iban: Coach.IBAN,
             id: Coach.id
         });
-        console.log ("open first modal");
+        //console.log ("open first modal");
     }
 
     onOpenSecondModal(Coach){
@@ -41,7 +41,7 @@ class Coach extends Component{
         var data = {
             id: Coach.id
         }
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         fetch('http://localhost:4000/api/deleteCoach', {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
@@ -65,7 +65,7 @@ class Coach extends Component{
             openThirdModal: true,
             openFirstModal: false,
         });
-        console.log ("open third modal");
+       // console.log ("open third modal");
     }
 
     // onCloseFirstModal(){
@@ -76,7 +76,7 @@ class Coach extends Component{
     // }
 
     onCloseSecondModal(){
-        console.log("close second modal")
+        //console.log("close second modal")
         this.setState({
             openSecondModal: false
         });
@@ -97,7 +97,7 @@ class Coach extends Component{
     }
 
     onCloseThirdModal(){
-        console.log("close first and third modal")
+        //console.log("close first and third modal")
         this.setState({
             openThirdModal: false,
         });
@@ -147,7 +147,7 @@ class Coach extends Component{
         this.setState({
             get_coach: nextProps.reloadCoach
         })
-        console.log("componentWillReceivePropsssssssss", this.state.get_coach);
+        //console.log("componentWillReceivePropsssssssss", this.state.get_coach);
     }
 
     componentDidMount() {
@@ -206,23 +206,23 @@ class Coach extends Component{
                                         <form onSubmit={this.handleEdit} method="POST">
                                             <div className="fieldset">
                                                 <label>Coach name </label>
-                                                <input  className="input-register"  placeholder='Company name' name='companyName' ref={coachName=>this.coachName=coachName}/>
+                                                <input  className="input-register"  placeholder='Coach name' name='companyName' ref={coachName=>this.coachName=coachName}/>
                                             </div>
                                             <div className="fieldset">
                                                 <label>Coach lastname  </label>
-                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={coachLastname=>this.coachLastname=coachLastname}/>
+                                                <input  className="input-register"  placeholder='Coach last name' name='vatNumber' ref={coachLastname=>this.coachLastname=coachLastname}/>
                                             </div>
                                             <div className="fieldset">
                                                 <label>Email </label>
-                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={email=>this.email=email}/>
+                                                <input  className="input-register"  placeholder='Email' name='vatNumber' ref={email=>this.email=email}/>
                                             </div>
                                             <div className="fieldset">
                                                 <label>Phone number </label>
-                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={phoneNumber=>this.phoneNumber=phoneNumber}/>
+                                                <input  className="input-register"  placeholder='Phone number' name='vatNumber' ref={phoneNumber=>this.phoneNumber=phoneNumber}/>
                                             </div>
                                             <div className="fieldset">
                                                 <label>Bank account </label>
-                                                <input  className="input-register"  placeholder='VAT Number' name='vatNumber' ref={bankAccount=>this.bankAccount=bankAccount}/>
+                                                <input  className="input-register"  placeholder='Bank account' name='vatNumber' ref={bankAccount=>this.bankAccount=bankAccount}/>
                                             </div>
                                             <div className="submit-section">
                                                 <button className="button-small button1" onClick={() => this.onOpenThirdModal(Coach)}>Submit</button>

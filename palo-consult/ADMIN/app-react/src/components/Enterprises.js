@@ -72,7 +72,7 @@ class Enterprises extends Component{
             openThirdModal: true,
             openFirstModal: false,
         });
-        console.log ("open third modal");
+        //console.log ("open third modal");
     }
     
     // onCloseFirstModal () {
@@ -84,7 +84,7 @@ class Enterprises extends Component{
     // }
 
     onCloseSecondModal (){
-        console.log("close modaaaaaaaal 2")
+        //console.log("close modaaaaaaaal 2")
         this.setState({
             openSecondModal: false
         });
@@ -104,7 +104,7 @@ class Enterprises extends Component{
     }
 
     onCloseThirdModal(){
-        console.log("close first and third modal")
+        //console.log("close first and third modal")
         this.setState({
             openThirdModal: false,
         });
@@ -144,7 +144,7 @@ class Enterprises extends Component{
             }
             return response.json();
         }).then(function(data){
-            console.log("dataaaa: ", data)
+            //console.log("dataaaa: ", data)
         }).catch(err =>{
             console.log("Errorrrr:", err);
         })
@@ -154,7 +154,7 @@ class Enterprises extends Component{
         this.setState({
             get_enterprise: nextProps.reloadEnterprise
         })
-        console.log("componentWillReceivePropsssssssss", this.state.get_enterprise);
+        //console.log("componentWillReceivePropsssssssss", this.state.get_enterprise);
     }
 
     componentDidMount() {
